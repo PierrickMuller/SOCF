@@ -215,6 +215,8 @@ architecture top of DE1_SoC_top is
             clk_clk                               : in    std_logic                     := 'X';             -- clk
       			pio_leds_external_connection_export   : out   std_logic_vector(9 downto 0);                     -- export
       			pio_switch_external_connection_export : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
+            pio_hex_external_connection_export    : out   std_logic_vector(31 downto 0);                    -- export
+            pio_key_external_connection_export    : in    std_logic_vector(3 downto 0)  := (others => 'X');  -- export
             memory_mem_a                    : out   std_logic_vector(14 downto 0);                    -- mem_a
             memory_mem_ba                   : out   std_logic_vector(2 downto 0);                     -- mem_ba
             memory_mem_ck                   : out   std_logic;                                        -- mem_ck
@@ -234,11 +236,14 @@ architecture top of DE1_SoC_top is
         );
     end component qsys_system;
 
+
+    signal temp_hex_s : std_logic_vector(31 downto 0);
 begin
 
 ---------------------------------------------------------
 --  HPS mapping
 ---------------------------------------------------------SW_I
+
 
     System : component qsys_system
     port map (
@@ -255,6 +260,8 @@ begin
         clk_clk                               => CLOCK_50_i,
         pio_leds_external_connection_export   => LEDR_o,
         pio_switch_external_connection_export => SW_I,
+        pio_hex_external_connection_export    => temp_hex_s,
+        pio_key_external_connection_export    => KEY_i,
         memory_mem_a        => HPS_DDR3_ADDR_o,
         memory_mem_ba       => HPS_DDR3_BA_o,
         memory_mem_ck       => HPS_DDR3_CK_P_o,
@@ -272,5 +279,10 @@ begin
         memory_mem_dm       => HPS_DDR3_DM_o,
         memory_oct_rzqin    => HPS_DDR3_RZQ_i
     );
+
+    HEX0_o <= temp_hex_s(6 downto 0);
+    HEX1_o <= temp_hex_s(14 downto 8);
+    HEX2_o <= temp_hex_s(22 downto 16);
+    HEX3_o <= temp_hex_s(30 downto 24);
 
 end top;
