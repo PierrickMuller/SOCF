@@ -22,10 +22,12 @@
  *
  *
 *****************************************************************************************/
-
-typedef volatile unsigned short vushort;
-typedef unsigned short ushort;
-typedef volatile unsigned int vuint;
+#include "address_map_arm.h"
+#include "defines.h"
+#include "exceptions.h"
+//typedef volatile unsigned short vushort;
+//typedef unsigned short ushort;
+//typedef volatile unsigned int vuint;
 
 const char temp[16] = {
       0x3f, // 0
@@ -46,20 +48,33 @@ const char temp[16] = {
       0x71  // F
   };
 
-
-#define BASE_ADRESSE          0xFF200000
-
-//Addresse des registres permettant d'écrire, de set la direction des gpios et d'écrire sur la gpio
-#define LEDS            *(vuint *) (BASE_ADRESSE + 0x0)
-#define HEX3_0          *(vuint *) (BASE_ADRESSE + 0x20)
-#define SWITCHS         *(vuint *) (BASE_ADRESSE + 0x40)
-#define KEYS            *(vuint *) (BASE_ADRESSE + 0x50)
-
-
 int main(void){
 
+  enable_A9_interrupts();
+  set_A9_IRQ_stack();
+
+
+  ICCICR |= 0x0;
+  ICDDCR |= 0x0;
+  ICCPMR = 255;
+  //Set enable bit
+  ICDISER |= 0xFFFFFFFF;//0x1 << (72 % 32);
+  KEYS_INTERRUPT |= 0xc;
+  //ICDIPTR |= 0x01 << (72 % 4);
+  ICDIPTR = 01010101;
+  //ICDICFR =  |= EDGE_TRIGGERED << ((72 % 16) + 1);
+  ICDICFR =  0xFFFFFFFF;
+  ICCICR |= 0x1;
+  ICDDCR |= 0x1;
   LEDS = 0x0;
   HEX3_0 = ~0x0;
+
+
+
+
+
+
+
     while(1)
     {
       if(!(KEYS & 0x1))
