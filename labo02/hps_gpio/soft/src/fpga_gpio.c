@@ -50,30 +50,31 @@ const char temp[16] = {
 
 int main(void){
 
-  enable_A9_interrupts();
-  set_A9_IRQ_stack();
+  int reg_offset, index, value, address;
 
-
-  ICCICR |= 0x0;
-  ICDDCR |= 0x0;
-  ICCPMR = 255;
-  //Set enable bit
-  ICDISER |= 0xFFFFFFFF;//0x1 << (72 % 32);
-  KEYS_INTERRUPT |= 0xc;
-  //ICDIPTR |= 0x01 << (72 % 4);
-  ICDIPTR = 01010101;
-  //ICDICFR =  |= EDGE_TRIGGERED << ((72 % 16) + 1);
-  ICDICFR =  0xFFFFFFFF;
-  ICCICR |= 0x1;
-  ICDDCR |= 0x1;
   LEDS = 0x0;
   HEX3_0 = ~0x0;
+  
+  set_A9_IRQ_stack();
 
+  reg_offset = (72>>3) & 0xFFFFFFFC;
+  index = 72 & 0x1F;
+  value = 0x1<<index;
+  address = 0xFFFED100 + reg_offset;
+  *(int*)address|= value;
 
+  reg_offset = (72 & 0xFFFFFFFC);
+  index = 72 & 0x3;
+  address = 0xFFFED800 + reg_offset + index;
+  *(char*)address = (char) 1;
 
+  ICCPMR = 0xFFFF;
+  ICCICR = 1;
+  ICDDCR = 1;
 
-
-
+  KEYS_INTERRUPT_ENABLE = 0xC;
+  KEYS_INTERRUPT_REGISTER = 0xF;
+  enable_A9_interrupts();
 
     while(1)
     {

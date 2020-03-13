@@ -55,7 +55,8 @@ typedef volatile unsigned int vuint;
 #define HEX3_0          *(vuint *) (BASE_ADRESSE + 0x20)
 #define SWITCHS         *(vuint *) (BASE_ADRESSE + 0x40)
 #define KEYS            *(vuint *) (BASE_ADRESSE + 0x50)
-#define KEYS_INTERRUPT  *(vuint *) (BASE_ADRESSE + 0x50 + 0x8)
+#define KEYS_INTERRUPT_ENABLE  *(vuint *) (BASE_ADRESSE + 0x50 + 0x8)
+#define KEYS_INTERRUPT_REGISTER *(vuint *) (BASE_ADRESSE + 0x50 + 0xC)
 
 #define ICCICR          *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x0)
 #define ICCPMR          *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x4)
@@ -63,6 +64,6 @@ typedef volatile unsigned int vuint;
 #define ICCEOIR         *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x10)
 
 #define ICDDCR          *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x0)
-#define ICDISER         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x100 + 0x8  )//(73 / 32) * 4)
+#define ICDISER         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x100 + 8  )//(72 / 32) * 4)
 #define ICDIPTR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x800 + 72 ) //(72/4)*4)
 #define ICDICFR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0xC00 + 16) //(72/16)*4

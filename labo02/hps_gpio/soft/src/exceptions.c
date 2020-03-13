@@ -57,13 +57,36 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 	 **********/
 
 	// Read CPU Interface registers to determine which peripheral has caused an interrupt
-	LEDS = 0x0;
-	HEX3_0 = ~0x0;
-	HEX3_0 = ~(0x0 | (temp2[0] << 24) | (temp2[1] << 16) | (temp2[2] << 8) | (temp2[3]));
-	// Handle the interrupt if it comes from the KEYs
+  int interrupt_ID = ICCIAR;
+  int hex_val, press;
 
+  press =KEYS_INTERRUPT_REGISTER;     // read the pushbutton interrupt registe
+  KEYS_INTERRUPT_REGISTER = press;     // Clear the interrupt
+
+  if(interrupt_ID == 72)
+  {
+    if (press & 0x4)       // KEY2
+    {
+      LEDS = (LEDS >> 1) | ((LEDS & (0x1 ))<<9);
+      hex_val = HEX3_0;
+      HEX3_0 = ~0x0;
+      HEX3_0 = (0x0 | ((hex_val & (0x7F)) << 24) | ((hex_val & (0x7F << 24)) >> 8) | ((hex_val & (0x7F << 16)) >> 8) | ((hex_val & (0x7F << 8))>>8));
+    }
+
+    else if (press & 0x8)
+    {
+      LEDS = (LEDS << 1) | ((LEDS & (0x1 << 9))>>9);
+      hex_val = HEX3_0;
+      HEX3_0 = ~0x0;
+      HEX3_0 = (0x0 | ((hex_val & (0x7F << 16)) << 8) | ((hex_val & (0x7F << 8)) << 8) | ((hex_val & (0x7F )) << 8) | ((hex_val & (0x7F << 24))>>24));
+    }
+
+      //HEX3_0 = ~(0x0 | (temp2[3] << 24) | (temp2[2] << 16) | (temp2[1] << 8) | (temp2[0]));
+
+  }
+	// Handle the interrupt if it comes from the KEYs
 	// Clear interrupt from the CPU Interface
-	ICCEOIR = ICCIAR;
+	ICCEOIR = interrupt_ID;
 	return;
 }
 
