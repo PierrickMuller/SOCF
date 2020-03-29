@@ -20,72 +20,49 @@
  *
  *****************************************************************************************
  * Modifications :
- * Ver    Date        Engineer      Comments
- * 0.0    16.02.2018  SMS           Initial version.
- *
+ * Ver    Date        Engineer      	Comments
+ * 0.0    16.02.2018  SMS           	Initial version.
+ * 0.1    21.03.2020  Muller Pierrick 	Ajout gestion IRQ pour Laboratoire 2 SOCF
 *****************************************************************************************/
 #include <stdint.h>
 
 #include "address_map_arm.h"
 #include "defines.h"
 
-const char temp2[16] = {
-      0x3f, // 0
-      0x06, // 1
-      0x5b, // 2
-      0xcf, // 3
-      0xe6, // 4
-      0xed, // 5
-      0xfd, // 6
-      0x87, // 7
-      0xff, // 8
-      0xef, // 9
-      0x77, // A
-      0x7C, // B
-      0x39, // C
-      0x5E, // D
-      0x79, // E
-      0x71  // F
-  };
-
-
 // Define the IRQ exception handler
 void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 {
-	/***********
-	 * TO DO
-	 **********/
-
-	// Read CPU Interface registers to determine which peripheral has caused an interrupt
+  // On lit le registre de l'interface CPU pour savoir quel périphérique a causé l'interruption 
   int interrupt_ID = ICCIAR;
   int hex_val, press;
 
-  press =KEYS_INTERRUPT_REGISTER;     // read the pushbutton interrupt registe
-  KEYS_INTERRUPT_REGISTER = press;     // Clear the interrupt
+  press = KEYS_INTERRUPT_REGISTER;     // On récupère le bouton qui à causer l'interruption
+  KEYS_INTERRUPT_REGISTER = press;     // On nettoie l'interruption dans le registre des interruptions pour les KEYS
 
+  // Si l'interruption à été causer par un bouton
   if(interrupt_ID == 72)
   {
     if (press & 0x4)       // KEY2
     {
+	  // On deplace les leds vers la droite ainsi que les valeurs des afficheurs 7 segments
       LEDS = (LEDS >> 1) | ((LEDS & (0x1 ))<<9);
       hex_val = HEX3_0;
       HEX3_0 = ~0x0;
       HEX3_0 = (0x0 | ((hex_val & (0x7F)) << 24) | ((hex_val & (0x7F << 24)) >> 8) | ((hex_val & (0x7F << 16)) >> 8) | ((hex_val & (0x7F << 8))>>8));
     }
 
-    else if (press & 0x8)
+    else if (press & 0x8)	// KEY3
     {
+	  // On deplace les leds vers la gauche ainsi que les valeurs des afficheurs 7 segments
       LEDS = (LEDS << 1) | ((LEDS & (0x1 << 9))>>9);
       hex_val = HEX3_0;
       HEX3_0 = ~0x0;
       HEX3_0 = (0x0 | ((hex_val & (0x7F << 16)) << 8) | ((hex_val & (0x7F << 8)) << 8) | ((hex_val & (0x7F )) << 8) | ((hex_val & (0x7F << 24))>>24));
     }
 
-      //HEX3_0 = ~(0x0 | (temp2[3] << 24) | (temp2[2] << 16) | (temp2[1] << 8) | (temp2[0]));
-
   }
-	// Handle the interrupt if it comes from the KEYs
-	// Clear interrupt from the CPU Interface
+  
+	// On nettoie l'interruption dans le registre de interruptions pour le processeur
 	ICCEOIR = interrupt_ID;
 	return;
 }

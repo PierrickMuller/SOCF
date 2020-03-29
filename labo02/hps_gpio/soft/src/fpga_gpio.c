@@ -7,15 +7,19 @@
  * Reconfigurable Embedded Digital Systems
  *****************************************************************************************
  *
- * File                 : hps_gpio.c
+ * File                 : fpga_gpio.c
  * Author               : Pierrick Muller
  * Date                 : 21.02.2020
  *
  * Context              : SOCF tutorial lab
  *
  *****************************************************************************************
- * Brief: light HPS user LED up when HPS user button pressed, for DE1-SoC board
+ * Brief: Programme permettant de gérer deux modes d'affichage pour les Leds et les afficheurs 7 segments
+ * 		  en fonction de l'état des switchs (SOCF labo2)
  *
+ *****************************************************************************************
+ * Sources : https://cyberlearn.hes-so.ch/pluginfile.php/3164985/mod_resource/content/2/gic_altera_manual_short.pdf
+ * 
  *****************************************************************************************
  * Modifications :
  * Ver    Date        Student      Comments
@@ -25,10 +29,9 @@
 #include "address_map_arm.h"
 #include "defines.h"
 #include "exceptions.h"
-//typedef volatile unsigned short vushort;
-//typedef unsigned short ushort;
-//typedef volatile unsigned int vuint;
 
+
+// Tableau permettant de gérer l'affichage sur les 7 segments
 const char temp[16] = {
       0x3f, // 0
       0x06, // 1
@@ -50,47 +53,66 @@ const char temp[16] = {
 
 int main(void){
 
-  int reg_offset, index, value, address;
+  int value;
 
+  //On réinitialise à 0 les valeurs des leds et des afficheurs 7 segments
   LEDS = 0x0;
   HEX3_0 = ~0x0;
   
+  // Initialize the banked stack pointer register for IRQ mode
   set_A9_IRQ_stack();
 
-  reg_offset = (72>>3) & 0xFFFFFFFC;
-  index = 72 & 0x1F;
-  value = 0x1<<index;
-  address = 0xFFFED100 + reg_offset;
-  *(int*)address|= value;
-
-  reg_offset = (72 & 0xFFFFFFFC);
-  index = 72 & 0x3;
-  address = 0xFFFED800 + reg_offset + index;
-  *(char*)address = (char) 1;
-
-  ICCPMR = 0xFFFF;
+  // On active l'envoi d'interruption au core via l'interface CPU 0
   ICCICR = 1;
-  ICDDCR = 1;
 
+  // On met le niveau nécéssaire pour qu'une interruption soit transmise au cpu au minimum afin que toutes les interruptions passent.
+  ICCPMR = 0xFFFF;
+  
+  // On active le distributeur
+  ICDDCR = 1;
+  
+  // On calcule la valeur à mettre dans le registre ICDISER (Interrupt Set Enable Registers) et on remplit le registre
+  // Le calcul pour la valeur peut être trouvé dans le document sous source dans l'entête.
+  value = 0x1<<(72%32); 
+  ICDISER |= value;
+  
+  //On renseigne que notre interruption doit être envoyée à l'interface CPU 0
+  ICDIPTR = 1;
+ 
+
+  // On active les interruptions pour les boutons KEY3 et KEY2
   KEYS_INTERRUPT_ENABLE = 0xC;
-  KEYS_INTERRUPT_REGISTER = 0xF;
+  
+  // On active les interruptions sur le processeur
   enable_A9_interrupts();
 
     while(1)
     {
+	  // Si on appuie sur le Bouton KEY1
       if(!(KEYS & 0x1))
       {
+		// On eteind les leds et l'afficheur 7 segements
         LEDS = 0x0;
         HEX3_0 = ~0x0;
+        
+        // On reporte l'état des switchs sur les leds
         LEDS = SWITCHS;
+        
+        // On effectue les manipulations demandées pour l'afficheur 7 segements pour KEY1
         HEX3_0 = ~(0x0 | (temp[(LEDS & 0x200) >> 9] << 24) | (temp[(LEDS & 0x100) >> 8] << 16) | (temp[(LEDS & 0xF0) >> 4 ] << 8) | (temp[(LEDS & 0xF)]));
 
       }
+      // Si on appuie sur le bouton KEY2
       else if(!(KEYS & 0x2))
       {
+		// On eteind les leds et l'afficheur 7 segements
         LEDS = 0x0;
         HEX3_0 = ~0x0;
+        
+        // On reporte l'état des switchs sur les leds
         LEDS = ~SWITCHS;
+        
+        // On effectue les manipulations demandées pour l'afficheur 7 segements pour KEY2
         HEX3_0 = ~(0x0 | (temp[(LEDS & 0x200) >> 9] << 24) | (temp[(LEDS & 0x100) >> 8] << 16) | (temp[(LEDS & 0xF0) >> 4 ] << 8) | (temp[(LEDS & 0xF)]));
       }
     }

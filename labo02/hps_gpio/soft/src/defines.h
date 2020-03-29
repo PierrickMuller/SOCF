@@ -45,12 +45,10 @@ typedef volatile unsigned int vuint;
 #define		INT_ENABLE				0b01000000
 #define		INT_DISABLE				0b11000000
 
-
 #define BASE_ADRESSE                    0xFF200000
 #define GIC_DISTRIBUTOR_BASE_ADRESSE    0xFFFED000
 #define GIC_CPU_INTERFACE_BASE_ADRESSE  0xFFFEC100
 
-//Addresse des registres permettant d'écrire, de set la direction des gpios et d'écrire sur la gpio
 #define LEDS            *(vuint *) (BASE_ADRESSE + 0x0)
 #define HEX3_0          *(vuint *) (BASE_ADRESSE + 0x20)
 #define SWITCHS         *(vuint *) (BASE_ADRESSE + 0x40)
@@ -64,6 +62,8 @@ typedef volatile unsigned int vuint;
 #define ICCEOIR         *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x10)
 
 #define ICDDCR          *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x0)
-#define ICDISER         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x100 + 8  )//(72 / 32) * 4)
-#define ICDIPTR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x800 + 72 ) //(72/4)*4)
+#define ICDISER         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x100 + 8  )//(floor(72 / 32) * 4)
+#define ICDIPTR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x800 + 72 + 0) //(72/4)*4 + (72%4))
 #define ICDICFR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0xC00 + 16) //(72/16)*4
+
+
