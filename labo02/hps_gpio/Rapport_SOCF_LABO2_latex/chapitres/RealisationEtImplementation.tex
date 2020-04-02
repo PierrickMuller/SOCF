@@ -1,12 +1,12 @@
 \section{Réalisation et implémentation}
 
-J'ai choisis de ne pas présenter l'implémentation faite partie par partie, mais de présenter l'implémentation finale car elle contient les éléments correspondants à chacune des parties. 
+J'ai choisi de ne pas présenter l'implémentation faite partie par partie, mais de présenter l'implémentation finale car elle contient les éléments correspondant à chacune des parties. 
 
 \subsection{Ajout des PIOs}
 
-Voici ce que l'on peut voir quand on ouvre le projet Qsys qui à été créé : 
+Voici ce que l'on peut voir quand on ouvre le projet Qsys qui a été créé : 
 
-\includegraphics[scale=0.35]{./images/pios.png}
+\includegraphics[scale=0.3]{./images/pios.png}
 \captionof{figure}{Laboratoire 2 : PIOs}
 
 On peut voir que 4 parallel I/O (pio) ont été ajoutés, un pour chacun des éléments de notre système que l'on souhaitait gérer.\\
@@ -20,14 +20,14 @@ La configuration de ces pio est la suivante : \\
 	\item pio\_KEY: un longueur de 4(Pour les 4 boutons), set en input, avec l'edge capture en rising (Pour récupérer l'appui sur le bouton) et avec les irq actives(irq de type EDGE, afin de se basé sur l'état de l'edge capture pour créer une interruption)\\
 \end{itemize}
 
-Le cablage avec les autres éléments consistait à brancher toutes les clocks sur la clock du hps, aisi que les reset (sur le reset du hps). De plus, pour le cas des KEYs, l'interruption est branchée sur la première "banque" d'interruption de la fpga qui va sur le hps (f2h\_irq0).
+Le câblage avec les autres éléments consistait à brancher toutes les clocks sur la clock du hps, ainsi que les resets (sur le reset du hps). De plus, pour le cas des KEYs, l'interruption est branchée sur la première "banque" d'interruption de la fpga qui va sur le hps (f2h\_irq0).
 
-La génération du VHDL c'est passé sans problème, et j'ai du ajouter les pio que j'avais créer au fichier DE1\_SoC\_top.vhd. Pour se faire, j'ai utiliser qsys et "Show instantiation template" : 
+La génération du VHDL s'est passé sans problème, et j'ai dû ajouter les pio que j'avais créés au fichier DE1\_SoC\_top.vhd. Pour ce faire, j'ai utilisé qsys et "Show instantiation template" : 
 
 \includegraphics[scale=0.4]{./images/show_instantiation_template.png}
 \captionof{figure}{Laboratoire 2 : Instantiation template}
 
-et j'ai ensuite modifier le fichier DE1\_SoC\_top.vhd afin de permettre l'utilisation des pios. J'ai copié les lignes que j'avais trouver dans l'instantiation template et je les ai mises dans l'import du composant qsys\_system dans le fichier DE1\_Soc\_top. De plus, j'ai du mapper les entrées et sorties du composant dans le même fichier : 
+et j'ai ensuite modifié le fichier DE1\_SoC\_top.vhd afin de permettre l'utilisation des pios. J'ai copié les lignes que j'avais trouvées dans l'instanciation template et je les ai mises dans l'import du composant qsys\_system dans le fichier DE1\_Soc\_top. De plus, j'ai dû mapper les entrées et sorties du composant dans le même fichier : 
 \begin{lstlisting}[language=VHDL]
 System : component qsys_system
 port map (
@@ -71,24 +71,24 @@ HEX3_o <= temp_hex_s(30 downto 24);
 
 \end{lstlisting}
 
-Comme on peut le voir ci-dessus, j'ai de plus dût créer un signal temporaire permettant de dispatcher la sortie du pio HEX entre les différentes sorties HEX qui étaient présentes dans le fichier.
+Comme on peut le voir ci-dessus, j'ai de plus dû créer un signal temporaire permettant de dispatcher la sortie du pio HEX entre les différentes sorties HEX qui étaient présentes dans le fichier.
 
 \subsection{Activation des interruptions dans Qsys}
-Dans Qsys, plusieurs configuration devaient être effectuées afin de pouvoir utiliser les interruptions. Voici une liste des démarches effectuées : \\
+Dans Qsys, plusieurs configurations devaient être effectuées afin de pouvoir utiliser les interruptions. Voici une liste des démarches effectuées : \\
 
 \begin{itemize}
 	\item Il faut activer dans la configuration de hps\_0 , sous "Fpga inteface" -> "interrupts", l'option "Enable FPGA-to-HPS interrupts"
-	\item le/les PIO qui doit bénéficier des interruptions doit être linké sur l'un des deux champ "f2h\_irq0/1".
-	\item Dans la colonne IRQ aussi, l'interruption du pio doit être linké sur l'un des deux champs vu plus haut. Dans notre cas, l'interruption porte le numéro 0 et est linké sur "f2h\_irq0", ce qui implique que le numéro de l'interruption sera le numéro 0 de la fpga( L'image ci-dessous montre le numéro de l'interruption, qui est donc 72)\\
+	\item le/les PIO qui doit bénéficier des interruptions doit être linké sur l'un des deux champs "f2h\_irq0/1".
+	\item Dans la colonne IRQ aussi, l'interruption du pio doit être linkée sur l'un des deux champs vu plus haut. Dans notre cas, l'interruption porte le numéro 0 et est linkée sur "f2h\_irq0", ce qui implique que le numéro de l'interruption sera le numéro 0 de la fpga( L'image ci-dessous montre le numéro de l'interruption, qui est donc 72)\\
 \end{itemize}
 
 \includegraphics[scale=0.5]{./images/fpga_irq0.png}
 \captionof{figure}{Laboratoire 2 : Numéro de l'interruption}
 
-Voici les modifications qui étaient nécéssaire dans Qsys afin d'activer les interruptions (En plus de celle déja configurée lors de la création des pios)
+Voici les modifications qui étaient nécessaire dans Qsys afin d'activer les interruptions (En plus de celle déja configurée lors de la création des pios)
 
 \subsection{Programme pour les features sans interruption}
-Le fonctionnement du programme pour les parties 1 et 2 du laboratoire à été entièrement commenté directement dans le code. \\
+Le fonctionnement du programme pour les parties 1 et 2 du laboratoire a été entièrement commenté directement dans le code. \\
 \begin{lstlisting}[language=C]
     while(1)
 {
@@ -123,7 +123,7 @@ Le fonctionnement du programme pour les parties 1 et 2 du laboratoire à été e
 \end{lstlisting}
 
 \subsection{Activation des registres du GIC et de la FPGA dans le code }
-Nous allons nous intéresser ici au valeurs attribuées aux registres dans la partie de code ci-dessous (Les commentaires explique le choix des valeurs) : \\
+Nous allons nous intéresser ici aux valeurs attribuées aux registres dans la partie de code ci-dessous (Les commentaires expliquent le choix des valeurs) : \\
 
 \begin{lstlisting}[language=C]
 // Initialize the banked stack pointer register for IRQ mode
@@ -157,7 +157,7 @@ enable_A9_interrupts();
 
 \subsection{Routine d'interruption}
 
-Voici la routine d'interruption qui à été mise en place pour ce laboratoire :\\
+Voici la routine d'interruption qui a été mise en place pour ce laboratoire :\\
  
 \begin{lstlisting}[language=C]
 // Define the IRQ exception handler

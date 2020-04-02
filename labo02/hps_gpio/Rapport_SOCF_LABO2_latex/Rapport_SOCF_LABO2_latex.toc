@@ -15,5 +15,5 @@
 \contentsline {subsection}{\numberline {3.4}Activation des registres du GIC et de la FPGA dans le code }{8}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Routine d'interruption}{9}{subsection.3.5}
 \contentsline {section}{\numberline {4}Simulation et tests}{10}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}
-\contentsline {section}{\numberline {6}Signatures}{10}{section.6}
+\contentsline {section}{\numberline {5}Conclusion}{13}{section.5}
+\contentsline {section}{\numberline {6}Signatures}{13}{section.6}
