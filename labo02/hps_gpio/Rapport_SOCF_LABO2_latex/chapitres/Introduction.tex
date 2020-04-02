@@ -1,0 +1,21 @@
+\section{Introduction}
+
+\subsection{Objectifs}
+Ce laboratoire a pour but d’accéder à des I/O cablées sur la partie FPGA. Il s’agira d’ajouter des blocs PIO pour interfacer ces I/O sur le HPS. Vous devrez comprendre comment   ajouter   des   IP   disponibles   dans   Qsys   pour   construire   des   interfaces permettant d’accéder aux I/O de la FPGA depuis le HPS.Dans un deuxième temps, vous utiliserez les interruptions du HPS, qui seront générées par un  PIO  que   vous utilisez  déjà.  Vous devrez  comprendre  le  mécanisme  des interruptions sur la Cyclone V SoC afin de bien gérer la gestion de celles-ci.
+
+\subsection{Spécifications sans les interruptions}
+Le but est d’allumer les LEDs et les afficheurs 7 segments selon l’état des boutons(KEY) et interrupteurs (switch) disponibles. La spécification du fonctionnement est la suivante:\\ 
+\begin{itemize}
+	\item Appui sur KEY0: les LEDs s’allument selon la position des différents switches. Les afficheurs HEX0 et HEX1 traduisent en hexadécimal les valeurs représentéespar les LED3 à LED0 et LED7 à LED4 respectivement. Les afficheurs HEX2 et HEX3 affichent 1 lorsque la LED8 et respectivement la LED9 sont allumées, 0 sinon.\\
+	\item Appui sur KEY1: les LEDs s’allument selon la position inverse des différents switches. Les afficheurs HEX0 et HEX1 traduisent en hexadécimal les valeurs représentées   par   les   LED3   à   LED0   et   LED7   à   LED4   respectivement.   Les afficheurs HEX2 et HEX3 affichent 1 lorsque la LED8 et respectivement la LED9 sont allumées, 0 sinon.
+\end{itemize}
+
+
+\subsection{Spécifications avec les interruptions}
+
+Complétez votre travail précédent avec les spécifications suivantes:\\
+L’appui sur KEY2 ou KEY3 génère une interruption permettant de réaliser lesfonctions suivantes:\\
+\begin{itemize}
+	\item Appui sur KEY2: l’affichage des LEDs et des afficheurs 7 segments subit unerotation à droite, les afficheurs 7 segments ne reflètent plus les valeurs desLEDs.\\
+	\item Appui sur KEY3: l’affichage des LEDs et des afficheurs 7 segmentssubit une rotation à gauche, les afficheurs 7 segments ne reflètent plusles valeurs des LEDs.
+\end{itemize}

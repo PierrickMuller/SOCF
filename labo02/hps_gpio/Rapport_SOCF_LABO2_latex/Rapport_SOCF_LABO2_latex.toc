@@ -1,0 +1,19 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Objectifs}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Sp\IeC {\'e}cifications sans les interruptions}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Sp\IeC {\'e}cifications avec les interruptions}{3}{subsection.1.3}
+\contentsline {section}{\numberline {2}Analyse}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Partie 1}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Partie 2}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Partie 3}{3}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Adress Map finale}{4}{subsection.2.4}
+\contentsline {section}{\numberline {3}R\IeC {\'e}alisation et impl\IeC {\'e}mentation}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Ajout des PIOs}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Activation des interruptions dans Qsys}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Programme pour les features sans interruption}{5}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Activation des registres du GIC et de la FPGA dans le code }{5}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Routine d'interruption}{5}{subsection.3.5}
+\contentsline {section}{\numberline {4}Simulation et tests}{5}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{5}{section.5}
+\contentsline {section}{\numberline {6}Signatures}{5}{section.6}
