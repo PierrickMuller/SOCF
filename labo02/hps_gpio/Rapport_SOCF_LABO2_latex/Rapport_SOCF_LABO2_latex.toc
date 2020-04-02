@@ -10,10 +10,10 @@
 \contentsline {subsection}{\numberline {2.4}Adress Map finale}{4}{subsection.2.4}
 \contentsline {section}{\numberline {3}R\IeC {\'e}alisation et impl\IeC {\'e}mentation}{4}{section.3}
 \contentsline {subsection}{\numberline {3.1}Ajout des PIOs}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Activation des interruptions dans Qsys}{5}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Programme pour les features sans interruption}{5}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Activation des registres du GIC et de la FPGA dans le code }{5}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Routine d'interruption}{5}{subsection.3.5}
-\contentsline {section}{\numberline {4}Simulation et tests}{5}{section.4}
-\contentsline {section}{\numberline {5}Conclusion}{5}{section.5}
-\contentsline {section}{\numberline {6}Signatures}{5}{section.6}
+\contentsline {subsection}{\numberline {3.2}Activation des interruptions dans Qsys}{7}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Programme pour les features sans interruption}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Activation des registres du GIC et de la FPGA dans le code }{8}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Routine d'interruption}{9}{subsection.3.5}
+\contentsline {section}{\numberline {4}Simulation et tests}{10}{section.4}
+\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}
+\contentsline {section}{\numberline {6}Signatures}{10}{section.6}
