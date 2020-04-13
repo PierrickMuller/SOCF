@@ -1,0 +1,1280 @@
+# //  Questa Sim-64
+# //  Version 10.5c_2 linux_x86_64 Oct 17 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:34:55 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:34:55 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:34:55 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:34:55 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:34:55 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+run -all
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 32 (31 downto 0). Right is 1 (31 downto 31).
+#    Time: 0 ns  Iteration: 0  Process: /axi4lite_slave_tb/axi_instance/line__354 File: ./src/axi4lite_slave.vhd
+# Fatal error in Architecture rtl at ./src/axi4lite_slave.vhd line 354
+# 
+# HDL call sequence:
+# Stopped at ./src/axi4lite_slave.vhd 354 Architecture rtl
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:35:50 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:35:50 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:35:50 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:35:50 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:35:50 on Apr 13,2020, Elapsed time: 0:00:55
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:35:50 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+
+
+run -all
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:36:09 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:36:09 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:36:09 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:36:09 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:36:09 on Apr 13,2020, Elapsed time: 0:00:19
+# Errors: 3, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:36:09 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:39:47 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:39:47 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:39:47 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:39:47 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:39:47 on Apr 13,2020, Elapsed time: 0:03:38
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:39:47 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:19 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:40:19 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:19 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:40:19 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:40:20 on Apr 13,2020, Elapsed time: 0:00:33
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:40:20 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:39 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:40:39 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:39 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:40:39 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:40:39 on Apr 13,2020, Elapsed time: 0:00:19
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:40:39 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 13 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:58 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:40:58 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:40:58 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:40:58 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:40:59 on Apr 13,2020, Elapsed time: 0:00:20
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:40:59 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:42:36 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:42:36 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:42:36 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:42:36 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:42:36 on Apr 13,2020, Elapsed time: 0:01:37
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:42:36 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./ru
+# Cannot open macro file: ./ru
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:43:40 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:43:40 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:43:40 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:43:40 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:43:40 on Apr 13,2020, Elapsed time: 0:01:04
+# Errors: 3, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:43:40 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 25 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:44:18 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:44:18 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:44:18 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(277): near "test": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(306): VHDL Compiler exiting
+# End time: 15:44:19 on Apr 13,2020, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ././run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:44:25 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:44:25 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:44:25 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:44:25 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:44:25 on Apr 13,2020, Elapsed time: 0:00:45
+# Errors: 7, Warnings: 4
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:44:25 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_DATA_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/C_S_AXI_ADDR_WIDTH
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ACLK
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARESET
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WLAST
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WSTRB
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARADDR
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RDATA
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_RVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_WREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BRESP
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_BVALID
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWREADY
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_AWPROT
+add wave -position end  sim:/axi4lite_slave_tb/S_AXI_ARPROT
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg4_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg5_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg6_obs
+add wave -position end  sim:/axi4lite_slave_tb/tst_reg7_obs
+add wave -position end  sim:/axi4lite_slave_tb/sim_end_s
+add wave -position end  sim:/axi4lite_slave_tb/ClockCount
+add wave -position end  sim:/axi4lite_slave_tb/sendIt
+add wave -position end  sim:/axi4lite_slave_tb/readIt
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod
+add wave -position end  sim:/axi4lite_slave_tb/ClockPeriod2
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_WRITE
+add wave -position end  sim:/axi4lite_slave_tb/TAB_STI_AXI_READ
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:45:36 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:45:36 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:45:36 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:45:36 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:45:36 on Apr 13,2020, Elapsed time: 0:01:11
+# Errors: 0, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:45:36 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 25 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:47:06 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:47:07 on Apr 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:47:07 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:47:07 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:47:07 on Apr 13,2020, Elapsed time: 0:01:31
+# Errors: 2, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:47:07 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 25 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 35 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 45 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 55 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 65 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 75 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 85 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 95 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 105 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 115 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Failure: AXI data not written
+#    Time: 125 ns  Iteration: 1  Process: /axi4lite_slave_tb/read_d File: ./tb/axi4lite_slave_tb.vhd
+# Break in Process read_d at ./tb/axi4lite_slave_tb.vhd line 250
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:47:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:47:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:47:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:47:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:47:56 on Apr 13,2020, Elapsed time: 0:00:49
+# Errors: 1, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:47:56 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:48:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:48:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:48:02 on Apr 13,2020, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:48:02 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:08 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:48:08 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:08 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:48:08 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:48:08 on Apr 13,2020, Elapsed time: 0:00:06
+# Errors: 0, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:48:08 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 25 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 35 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 45 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 55 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 65 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 75 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 85 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 95 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: test
+#    Time: 105 ns  Iteration: 3  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 115 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Failure: AXI data not written
+#    Time: 125 ns  Iteration: 1  Process: /axi4lite_slave_tb/read_d File: ./tb/axi4lite_slave_tb.vhd
+# Break in Process read_d at ./tb/axi4lite_slave_tb.vhd line 250
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:48:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:48:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:48:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:48:51 on Apr 13,2020, Elapsed time: 0:00:43
+# Errors: 1, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:48:51 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 35 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 55 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 75 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 95 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 115 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Failure: AXI data not written
+#    Time: 125 ns  Iteration: 1  Process: /axi4lite_slave_tb/read_d File: ./tb/axi4lite_slave_tb.vhd
+# Break in Process read_d at ./tb/axi4lite_slave_tb.vhd line 250
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:50:46 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:50:46 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:50:46 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:50:46 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:50:46 on Apr 13,2020, Elapsed time: 0:01:55
+# Errors: 1, Warnings: 3
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:50:46 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 35 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 55 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 75 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 95 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 115 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 130 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 145 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 160 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 175 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:53:02 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:53:02 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:53:02 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:53:02 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:53:02 on Apr 13,2020, Elapsed time: 0:02:16
+# Errors: 0, Warnings: 2
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:53:02 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 35 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 55 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 75 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 95 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 115 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 130 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 145 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 160 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Note: >>Test avec table de lecture sur bus AXI
+#    Time: 175 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# End time: 15:59:06 on Apr 13,2020, Elapsed time: 0:06:04
+# Errors: 0, Warnings: 1

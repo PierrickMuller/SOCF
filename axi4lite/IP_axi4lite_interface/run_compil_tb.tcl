@@ -18,4 +18,4 @@ vsim -novopt work.axi4lite_slave_tb
 #add wave UUT/*
 
 #ouvre le fichier format predefini
-#do wave_bin_lin_2to4_tb.do
+do wave.do

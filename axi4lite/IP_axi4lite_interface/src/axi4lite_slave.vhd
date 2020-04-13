@@ -84,12 +84,14 @@ architecture rtl of axi4lite_slave is
     signal axi_awready_s       : std_logic;
     signal axi_wready_s        : std_logic;
     signal axi_arready_s       : std_logic;
+    signal axi_rvalid_s        : std_logic;
     signal axi_bvalid_s        : std_logic;
     signal axi_bresp_s         : std_logic_vector(1 downto 0);
      --intern signal for the axi interface
     signal axi_waddr_mem_s     : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
     signal axi_araddr_mem_s    : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
     signal axi_data_wren_s     : std_logic;
+    signal axi_data_reen_s     : std_logic;
     
      -- signal representing registers 
     signal const_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
@@ -99,6 +101,9 @@ architecture rtl of axi4lite_slave is
     signal hex54_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal switch_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal keys_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    
+    
+    signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     --intern signal for adress decoding
 --signal local_address_write_s      : integer;
 --signal local_address_read_s       : integer;
@@ -254,9 +259,11 @@ begin
     if(reset_s = '1') then
         axi_bvalid_s <= '0';
     elsif rising_edge(axi_clk_i) then
-        if(axi_bvalid_s = '0' and axi_bready_i = '1' and axi_data_wren_s = '1') then 
+        if(axi_bvalid_s = '0' and axi_bready_i = '1' ) then--and axi_data_wren_s = '1') then 
             axi_bvalid_s <= '1';
             axi_bresp_s <= "00";
+        else
+            axi_bvalid_s <= '0';
         end if;
     end if;
    end process;
@@ -290,8 +297,64 @@ begin
 -----------------------------------------------------------
 -- Read data channel
 
-    --to be completed
+    --to be completedn
+    process (reset_s, axi_clk_i)
+    begin
+        if reset_s = '1' then
+            --axi_waddr_done_s <= '0'; 
+            axi_rvalid_s    <= '0';
+            
+        elsif rising_edge(axi_clk_i) then
+            if(axi_rvalid_s = '0' and axi_rready_i = '1') then 
+                axi_rvalid_s <= '1';
+            else 
+                axi_rvalid_s <= '0';
+            end if;
+          --to be completed
+        end if;
+    end process;
     
+    axi_rvalid_o <= axi_rvalid_s;
+
+
+    --condition to read data
+    axi_data_reen_s <= '1' when ((axi_rready_i = '1') and (axi_rvalid_s = '1'));
+    
+    
+    process (reset_s, axi_clk_i)
+        --number address to access 32 or 64 bits data
+        variable int_raddr_v : natural;
+    begin
+        if reset_s = '1' then
+            
+          --to be completed
+          axi_data_reen_s <= '0';
+            
+        elsif rising_edge(axi_clk_i) then
+
+            if axi_data_reen_s = '1' then
+                int_raddr_v   := to_integer(unsigned(axi_araddr_mem_s));
+                case int_raddr_v is
+                    when 0   => axi_rdata_s <= const_register_s; -- constante, on écrit pas dedans
+                    when 1   => axi_rdata_s <= test_register_s; -- Test register 
+                    when 2   => axi_rdata_s <= leds_register_s; -- Leds register 
+                    when 3   => axi_rdata_s <= hex03_register_s; -- HEX3..0 register 
+                    when 4   => axi_rdata_s <= hex54_register_s; -- HEX5..4 register
+                    when 5   => axi_rdata_s <= switch_register_s; -- switch_register_s
+                    when 6   => axi_rdata_s <= keys_register_s;
+                    --to be completed
+                    when others => null; 
+                end case;
+            end if;
+        end if;
+    end process;
+   
+   axi_rdata_o <= axi_rdata_s;
+   axi_rresp_o <= "00";
+   output_reg_A_o  <= const_register_s;
+   output_reg_B_o <= test_register_s;
+   output_reg_C_o <= leds_register_s;
+   output_reg_D_o <= hex03_register_s;
 
 
 
