@@ -76,10 +76,77 @@ architecture rtl of axi4lite_slave is
      --intern signal for the axi interface
     signal axi_waddr_mem_s     : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
     signal axi_araddr_mem_s    : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
-
+    
+     --intern signal for adress decoding
+    signal local_address_write_s <=    : integer;
+    signal local_address_read_s <=	  : integer;
+	signal const_register_address_valid_write_s : std_logic;
+	signal test_register_address_valid_write_s : std_logic;
+	signal leds_register_address_valid_write_s : std_logic;
+	signal hex03_register_address_valid_write_s : std_logic;
+	signal hex45_register_address_valid_write_s : std_logic;
+	signal switch_register_address_valid_write_s : std_logic;
+	signal keys_register_address_valid_write_s : std_logic;
+	signal const_register_address_valid_read_s : std_logic;
+	signal test_register_address_valid_read_s : std_logic;
+	signal leds_register_address_valid_read_s : std_logic;
+	signal hex03_register_address_valid_read_s : std_logic;
+	signal hex45_register_address_valid_read_s : std_logic;
+	signal switch_register_address_valid_read_s : std_logic;
+	signal keys_register_address_valid_read_s : std_logic;
 begin
 
     reset_s  <= axi_reset_i;
+
+-----------------------------------------------------------
+-- address decoding
+
+-- On récupére l'offset dans l'adresse. On utilise pas les deux bits de poid faible 
+local_address_write_s <= to_integer(unsigned(axi_waddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
+local_address_read_s <= to_integer(unsigned(axi_araddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
+
+address_range_analysis : process (local_address_write_s, local_address_read_s)
+begin
+	-- write valid
+	const_register_address_valid_write_s <= '0';
+	test_register_address_valid_write_s <= '0';
+	leds_register_address_valid_write_s <= '0';
+	hex03_register_address_valid_write_s <= '0';
+	hex45_register_address_valid_write_s <= '0';
+	switch_register_address_valid_write_s <= '0';
+	keys_register_address_valid_write_s <= '0';
+	
+	-- read valid 
+	const_register_address_valid_read_s <= '0';
+	test_register_address_valid_read_s <= '0';
+	leds_register_address_valid_read_s <= '0';
+	hex03_register_address_valid_read_s <= '0';
+	hex45_register_address_valid_read_s <= '0';
+	switch_register_address_valid_read_s <= '0';
+	keys_register_address_valid_read_s <= '0';	
+	
+	case (local_address_write_s) is
+		when 0 => const_register_address_valid_write_s <= '1';
+		when 1 => test_register_address_valid_write_s <= '1';
+		when 2 => leds_register_address_valid_write_s <= '1'; 
+		when 3 => hex03_register_address_valid_write_s <= '1';
+		when 4 => hex45_register_address_valid_write_s <= '1';
+		when 5 => switch_register_address_valid_write_s <= '1';
+		when 6 => keys_register_address_valid_write_s <= '1';
+		when others => NULL;
+	end case;
+	
+	case (local_address_read_s) is
+		when 0 => const_register_address_valid_read_s <= '1';
+		when 1 => test_register_address_valid_read_s <= '1';
+		when 2 => leds_register_address_valid_read_s <= '1'; 
+		when 3 => hex03_register_address_valid_read_s <= '1';
+		when 4 => hex45_register_address_valid_read_s <= '1';
+		when 5 => switch_register_address_valid_read_s <= '1';
+		when 6 => keys_register_address_valid_read_s <= '1';
+		when others => NULL;
+	end case;
+end process;
 
 -----------------------------------------------------------
 -- Write address channel
