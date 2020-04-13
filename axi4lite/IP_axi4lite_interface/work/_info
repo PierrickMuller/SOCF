@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/redsuser/SOCF/axi4lite/IP_axi4lite_interface
 Eaxi4lite_slave
-Z1 w1586785978
+Z1 w1586799502
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VdI8B[lBkWO@0;<ECPZ3V>0
 !s100 C>aD8[f50QkC[RVWloN7k0
 Z7 OL;C;10.5c_2;63
 32
-Z8 !s110 1586785982
+Z8 !s110 1586799503
 !i10b 1
-Z9 !s108 1586785982.000000
+Z9 !s108 1586799503.000000
 Z10 !s90 -reportprogress|300|-work|work|./src/axi4lite_slave.vhd|
 Z11 !s107 ./src/axi4lite_slave.vhd|
 !i113 0
@@ -37,10 +37,10 @@ R4
 Z14 DEx4 work 14 axi4lite_slave 0 22 dI8B[lBkWO@0;<ECPZ3V>0
 32
 R8
-l124
+l132
 L72
-VbTJgG1jck66Xn?bAW53Ii2
-!s100 QZ;:89TBmUXKVb<NAReEI1
+V`GzCcKdZ>JF?J4l_mA:3b0
+!s100 A_Ti7`LdGz=?05KLUGCzo0
 R7
 !i10b 1
 R9

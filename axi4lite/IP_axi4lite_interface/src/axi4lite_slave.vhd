@@ -104,7 +104,11 @@ architecture rtl of axi4lite_slave is
     
     
     signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    --intern signal for adress decoding
+    
+    
+
+    
+--intern signal for adress decoding
 --signal local_address_write_s      : integer;
 --signal local_address_read_s       : integer;
 --signal const_register_address_valid_write_s : std_logic;
@@ -121,6 +125,10 @@ architecture rtl of axi4lite_slave is
 --signal hex45_register_address_valid_read_s : std_logic;
 --signal switch_register_address_valid_read_s : std_logic;
 --signal keys_register_address_valid_read_s : std_logic;
+
+    signal test     : std_logic;
+    
+    
 begin
 
     reset_s  <= axi_reset_i;
@@ -183,6 +191,10 @@ begin
         if reset_s = '1' then
             axi_awready_s <= '0';
             axi_waddr_mem_s <= (others => '0');
+            const_register_s <= vect_input_A_i;
+            test_register_s <= vect_input_B_i;
+            leds_register_s <= vect_input_C_i;
+            hex03_register_s <= vect_input_D_i;
         elsif rising_edge(axi_clk_i) then
             if (axi_awready_s = '0' and axi_awvalid_i = '1')  then --and axi_wvalid_i = '1') then  modif EMI 10juil2018
                 -- slave is ready to accept write address when
@@ -210,6 +222,7 @@ begin
         elsif rising_edge(axi_clk_i) then
             if(axi_wready_s = '0' and axi_wvalid_i = '1') then 
                 axi_wready_s <= '1';
+                axi_data_wren_s <= '1';
             else 
                 axi_wready_s <= '0';
             end if;
@@ -221,7 +234,8 @@ begin
 
 
     --condition to write data
-    axi_data_wren_s <= '1' when ((axi_wready_s = '1') and (axi_wvalid_i = '1'));
+    --axi_data_wren_s <= '1' when ((axi_wready_s = '1') and (axi_wvalid_i = '1')) else
+     --                  '0';
     
     
     process (reset_s, axi_clk_i)
@@ -244,22 +258,25 @@ begin
                     when 3   => hex03_register_s <= axi_wdata_i; -- HEX3..0 register 
                     when 4   => hex54_register_s <= axi_wdata_i; -- HEX5..4 register 
                     --to be completed
-                    when others => null;  -- switch, keys ou autre, on écrit pas dedans
+                    when others => null;  --on écrit pas dedans
                 end case;
+                --report "axi_data_wren_s value is" & std_logic'image(axi_data_wren_s);
             end if;
+             
         end if;
     end process;
                     
-
+    
 -----------------------------------------------------------
 -- Write response channel
 
    process (reset_s , axi_clk_i)
    begin 
-    if(reset_s = '1') then
+    if reset_s = '1' then
         axi_bvalid_s <= '0';
     elsif rising_edge(axi_clk_i) then
-        if(axi_bvalid_s = '0' and axi_bready_i = '1' ) then--and axi_data_wren_s = '1') then 
+    
+        if axi_data_wren_s = '1' then --and axi_data_wren_s = '1') then 
             axi_bvalid_s <= '1';
             axi_bresp_s <= "00";
         else
@@ -349,8 +366,9 @@ begin
         end if;
     end process;
    
-   axi_rdata_o <= axi_rdata_s;
+   --axi_rdata_o <= axi_rdata_s;
    axi_rresp_o <= "00";
+
    output_reg_A_o  <= const_register_s;
    output_reg_B_o <= test_register_s;
    output_reg_C_o <= leds_register_s;
