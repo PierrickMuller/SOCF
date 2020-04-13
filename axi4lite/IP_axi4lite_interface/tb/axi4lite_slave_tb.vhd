@@ -54,7 +54,7 @@ architecture Behavioral of axi4lite_slave_tb is
     signal S_AXI_AWREADY       : std_logic;
     signal S_AXI_AWPROT        : std_logic_vector(2 downto 0);
     signal S_AXI_ARPROT        : std_logic_vector(2 downto 0);
-
+    -- commenté pour test
     signal  tst_reg4_obs       : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
     signal  tst_reg5_obs       : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
     signal  tst_reg6_obs       : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -137,6 +137,7 @@ begin
             axi_rvalid_o    => S_AXI_RVALID,
             axi_rready_i    => S_AXI_RREADY,
 
+            -- Commenté pour test
             vect_input_A_i  => x"12345678",
             vect_input_B_i  => x"11223344",
             vect_input_C_i  => x"A5A5A5A5",

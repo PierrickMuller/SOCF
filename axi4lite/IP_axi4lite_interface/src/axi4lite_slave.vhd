@@ -51,8 +51,19 @@ entity axi4lite_slave is
         axi_rdata_o     : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
         axi_rresp_o     : out std_logic_vector(1 downto 0);
         axi_rvalid_o    : out std_logic;
-        axi_rready_i    : in  std_logic
+        axi_rready_i    : in  std_logic;
         -- User input-output
+        
+        --TEST POUR TESTBENCH 
+        vect_input_A_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        vect_input_B_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        vect_input_C_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        vect_input_D_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        
+        output_reg_A_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+        output_reg_B_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+        output_reg_C_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+        output_reg_D_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0) 
         
         
     );
@@ -71,29 +82,40 @@ architecture rtl of axi4lite_slave is
     --signal for the AXI slave
     --intern signal for output
     signal axi_awready_s       : std_logic;
+    signal axi_wready_s        : std_logic;
     signal axi_arready_s       : std_logic;
-
+    signal axi_bvalid_s        : std_logic;
+    signal axi_bresp_s         : std_logic_vector(1 downto 0);
      --intern signal for the axi interface
     signal axi_waddr_mem_s     : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
     signal axi_araddr_mem_s    : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
+    signal axi_data_wren_s     : std_logic;
     
-     --intern signal for adress decoding
-    signal local_address_write_s <=    : integer;
-    signal local_address_read_s <=	  : integer;
-	signal const_register_address_valid_write_s : std_logic;
-	signal test_register_address_valid_write_s : std_logic;
-	signal leds_register_address_valid_write_s : std_logic;
-	signal hex03_register_address_valid_write_s : std_logic;
-	signal hex45_register_address_valid_write_s : std_logic;
-	signal switch_register_address_valid_write_s : std_logic;
-	signal keys_register_address_valid_write_s : std_logic;
-	signal const_register_address_valid_read_s : std_logic;
-	signal test_register_address_valid_read_s : std_logic;
-	signal leds_register_address_valid_read_s : std_logic;
-	signal hex03_register_address_valid_read_s : std_logic;
-	signal hex45_register_address_valid_read_s : std_logic;
-	signal switch_register_address_valid_read_s : std_logic;
-	signal keys_register_address_valid_read_s : std_logic;
+     -- signal representing registers 
+    signal const_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal test_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal leds_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal hex03_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal hex54_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal switch_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal keys_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    --intern signal for adress decoding
+--signal local_address_write_s      : integer;
+--signal local_address_read_s       : integer;
+--signal const_register_address_valid_write_s : std_logic;
+--signal test_register_address_valid_write_s : std_logic;
+--signal leds_register_address_valid_write_s : std_logic;
+--signal hex03_register_address_valid_write_s : std_logic;
+--signal hex45_register_address_valid_write_s : std_logic;
+--signal switch_register_address_valid_write_s : std_logic;
+--signal keys_register_address_valid_write_s : std_logic;
+--signal const_register_address_valid_read_s : std_logic;
+--signal test_register_address_valid_read_s : std_logic;
+--signal leds_register_address_valid_read_s : std_logic;
+--signal hex03_register_address_valid_read_s : std_logic;
+--signal hex45_register_address_valid_read_s : std_logic;
+--signal switch_register_address_valid_read_s : std_logic;
+--signal keys_register_address_valid_read_s : std_logic;
 begin
 
     reset_s  <= axi_reset_i;
@@ -102,52 +124,52 @@ begin
 -- address decoding
 
 -- On récupére l'offset dans l'adresse. On utilise pas les deux bits de poid faible 
-local_address_write_s <= to_integer(unsigned(axi_waddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
-local_address_read_s <= to_integer(unsigned(axi_araddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
+--local_address_write_s <= to_integer(unsigned(axi_waddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
+--local_address_read_s <= to_integer(unsigned(axi_araddr_mem_s(AXI_ADDR_WIDTH - 1 downto 0)));
 
-address_range_analysis : process (local_address_write_s, local_address_read_s)
-begin
-	-- write valid
-	const_register_address_valid_write_s <= '0';
-	test_register_address_valid_write_s <= '0';
-	leds_register_address_valid_write_s <= '0';
-	hex03_register_address_valid_write_s <= '0';
-	hex45_register_address_valid_write_s <= '0';
-	switch_register_address_valid_write_s <= '0';
-	keys_register_address_valid_write_s <= '0';
-	
-	-- read valid 
-	const_register_address_valid_read_s <= '0';
-	test_register_address_valid_read_s <= '0';
-	leds_register_address_valid_read_s <= '0';
-	hex03_register_address_valid_read_s <= '0';
-	hex45_register_address_valid_read_s <= '0';
-	switch_register_address_valid_read_s <= '0';
-	keys_register_address_valid_read_s <= '0';	
-	
-	case (local_address_write_s) is
-		when 0 => const_register_address_valid_write_s <= '1';
-		when 1 => test_register_address_valid_write_s <= '1';
-		when 2 => leds_register_address_valid_write_s <= '1'; 
-		when 3 => hex03_register_address_valid_write_s <= '1';
-		when 4 => hex45_register_address_valid_write_s <= '1';
-		when 5 => switch_register_address_valid_write_s <= '1';
-		when 6 => keys_register_address_valid_write_s <= '1';
-		when others => NULL;
-	end case;
-	
-	case (local_address_read_s) is
-		when 0 => const_register_address_valid_read_s <= '1';
-		when 1 => test_register_address_valid_read_s <= '1';
-		when 2 => leds_register_address_valid_read_s <= '1'; 
-		when 3 => hex03_register_address_valid_read_s <= '1';
-		when 4 => hex45_register_address_valid_read_s <= '1';
-		when 5 => switch_register_address_valid_read_s <= '1';
-		when 6 => keys_register_address_valid_read_s <= '1';
-		when others => NULL;
-	end case;
-end process;
-
+--address_range_analysis : process (local_address_write_s, local_address_read_s)
+--begin
+--	-- write valid
+--	const_register_address_valid_write_s <= '0';
+--	test_register_address_valid_write_s <= '0';
+--	leds_register_address_valid_write_s <= '0';
+--	hex03_register_address_valid_write_s <= '0';
+--	hex45_register_address_valid_write_s <= '0';
+--	switch_register_address_valid_write_s <= '0';
+--	keys_register_address_valid_write_s <= '0';
+--	
+--	-- read valid 
+--	const_register_address_valid_read_s <= '0';
+--	test_register_address_valid_read_s <= '0';
+--	leds_register_address_valid_read_s <= '0';
+--	hex03_register_address_valid_read_s <= '0';
+--	hex45_register_address_valid_read_s <= '0';
+--	switch_register_address_valid_read_s <= '0';
+--	keys_register_address_valid_read_s <= '0';	
+--	
+--	case (local_address_write_s) is
+--		when 0 => const_register_address_valid_write_s <= '1';
+--		when 1 => test_register_address_valid_write_s <= '1';
+--		when 2 => leds_register_address_valid_write_s <= '1'; 
+--		when 3 => hex03_register_address_valid_write_s <= '1';
+--		when 4 => hex45_register_address_valid_write_s <= '1';
+--		when 5 => switch_register_address_valid_write_s <= '1';
+--		when 6 => keys_register_address_valid_write_s <= '1';
+--		when others => NULL;
+--	end case;
+--	
+--	case (local_address_read_s) is
+--		when 0 => const_register_address_valid_read_s <= '1';
+--		when 1 => test_register_address_valid_read_s <= '1';
+--		when 2 => leds_register_address_valid_read_s <= '1'; 
+--		when 3 => hex03_register_address_valid_read_s <= '1';
+--		when 4 => hex45_register_address_valid_read_s <= '1';
+--		when 5 => switch_register_address_valid_read_s <= '1';
+--		when 6 => keys_register_address_valid_read_s <= '1';
+--		when others => NULL;
+--	end case;
+--end process;
+--
 -----------------------------------------------------------
 -- Write address channel
 
@@ -175,18 +197,18 @@ end process;
 -- Write data channel
 
     -- Implement axi_wready generation
-    process (reset_s, clk_i)
+    process (reset_s, axi_clk_i)
     begin
         if reset_s = '1' then
-            axi_waddr_done_s <= '0'; 
+            --axi_waddr_done_s <= '0'; 
             axi_wready_s    <= '0';
-        elsif rising_edge(clk_i) then
-
-        
+        elsif rising_edge(axi_clk_i) then
+            if(axi_wready_s = '0' and axi_wvalid_i = '1') then 
+                axi_wready_s <= '1';
+            else 
+                axi_wready_s <= '0';
+            end if;
           --to be completed
-           
-        
-        
         end if;
     end process;
     
@@ -194,32 +216,30 @@ end process;
 
 
     --condition to write data
-    axi_data_wren_s <=  --to be completed....     ;
+    axi_data_wren_s <= '1' when ((axi_wready_s = '1') and (axi_wvalid_i = '1'));
     
     
-    process (reset_s, clk_i)
+    process (reset_s, axi_clk_i)
         --number address to access 32 or 64 bits data
         variable int_waddr_v : natural;
     begin
         if reset_s = '1' then
             
           --to be completed
+          axi_data_wren_s <= '0';
             
-            
-        elsif rising_edge(clk_i) then
+        elsif rising_edge(axi_clk_i) then
 
             if axi_data_wren_s = '1' then
                 int_waddr_v   := to_integer(unsigned(axi_waddr_mem_s));
                 case int_waddr_v is
-                    when 0   => .....
-                    
-                    when 1   => .....
-                    
-                    
+                    when 0   => null; -- constante, on écrit pas dedans
+                    when 1   => test_register_s <= axi_wdata_i; -- Test register 
+                    when 2   => leds_register_s <= axi_wdata_i; -- Leds register 
+                    when 3   => hex03_register_s <= axi_wdata_i; -- HEX3..0 register 
+                    when 4   => hex54_register_s <= axi_wdata_i; -- HEX5..4 register 
                     --to be completed
-
-
-                    when others => null;
+                    when others => null;  -- switch, keys ou autre, on écrit pas dedans
                 end case;
             end if;
         end if;
@@ -229,10 +249,21 @@ end process;
 -----------------------------------------------------------
 -- Write response channel
 
-
+   process (reset_s , axi_clk_i)
+   begin 
+    if(reset_s = '1') then
+        axi_bvalid_s <= '0';
+    elsif rising_edge(axi_clk_i) then
+        if(axi_bvalid_s = '0' and axi_bready_i = '1' and axi_data_wren_s = '1') then 
+            axi_bvalid_s <= '1';
+            axi_bresp_s <= "00";
+        end if;
+    end if;
+   end process;
+   
+   axi_bvalid_o <= axi_bvalid_s;
+   axi_bresp_o <= axi_bresp_s;
     --to be completed
-
-
     
 
 -----------------------------------------------------------
@@ -260,6 +291,7 @@ end process;
 -- Read data channel
 
     --to be completed
+    
 
 
 
