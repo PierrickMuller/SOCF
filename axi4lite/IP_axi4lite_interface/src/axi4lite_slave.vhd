@@ -55,15 +55,26 @@ entity axi4lite_slave is
         -- User input-output
         
         --TEST POUR TESTBENCH 
-        vect_input_A_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        vect_input_B_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        vect_input_C_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        vect_input_D_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        
-        output_reg_A_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
-        output_reg_B_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
-        output_reg_C_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
-        output_reg_D_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0) 
+--         vect_input_A_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+--         vect_input_B_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+--         vect_input_C_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+--         vect_input_D_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+--         
+--         output_reg_A_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+--         output_reg_B_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+--         output_reg_C_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
+--         output_reg_D_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0) 
+         --leds_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         --hex03_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         --hex54_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         
+         
+         switch_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         keys_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         
+         leds_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         hex03_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+         hex54_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0)
         
         
     );
@@ -104,7 +115,7 @@ architecture rtl of axi4lite_slave is
     
     
     signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    
+    signal axi_waddr_done_s     : std_logic;
     
 
     
@@ -126,13 +137,19 @@ architecture rtl of axi4lite_slave is
 --signal switch_register_address_valid_read_s : std_logic;
 --signal keys_register_address_valid_read_s : std_logic;
 
-    signal test     : std_logic;
-    
+
+    signal axi_wdata_s    : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal temp_Vect_Strb_1_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_2_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_3_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_4_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+   
     
 begin
 
     reset_s  <= axi_reset_i;
 
+    --axi_wdata_s <= axi_wdata_i;
 -----------------------------------------------------------
 -- address decoding
 
@@ -186,22 +203,26 @@ begin
 -----------------------------------------------------------
 -- Write address channel
 
+    -- GESTION DU STROBE
+    temp_Vect_Strb_1_s <= axi_wdata_i(7 downto 0) when axi_wstrb_i(0) = '1' else (others => '0');
+    temp_Vect_Strb_2_s <= axi_wdata_i(15 downto 8) when axi_wstrb_i(1) = '1' else (others => '0');
+    temp_Vect_Strb_3_s <= axi_wdata_i(23 downto 16) when axi_wstrb_i(2) = '1' else (others => '0');
+    temp_Vect_Strb_4_s <= axi_wdata_i(31 downto 24) when axi_wstrb_i(3) = '1' else (others => '0');
+    axi_wdata_s <= temp_Vect_Strb_4_s & temp_Vect_Strb_3_s & temp_Vect_Strb_2_s & temp_Vect_Strb_1_s;
+    
+    
     process (reset_s, axi_clk_i)
     begin
         if reset_s = '1' then
             axi_awready_s <= '0';
             axi_waddr_mem_s <= (others => '0');
-            const_register_s <= vect_input_A_i;
-            test_register_s <= vect_input_B_i;
-            leds_register_s <= vect_input_C_i;
-            hex03_register_s <= vect_input_D_i;
         elsif rising_edge(axi_clk_i) then
             if (axi_awready_s = '0' and axi_awvalid_i = '1')  then --and axi_wvalid_i = '1') then  modif EMI 10juil2018
                 -- slave is ready to accept write address when
                 -- there is a valid write address
                 axi_awready_s <= '1';
                 -- Write Address memorizing
-                axi_waddr_mem_s <= axi_awaddr_i(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
+                axi_waddr_mem_s <=  axi_awaddr_i(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
             else
                 axi_awready_s <= '0';
             end if;
@@ -218,13 +239,16 @@ begin
     begin
         if reset_s = '1' then
             --axi_waddr_done_s <= '0'; 
+            axi_data_wren_s <= '1';
             axi_wready_s    <= '0';
         elsif rising_edge(axi_clk_i) then
             if(axi_wready_s = '0' and axi_wvalid_i = '1') then 
                 axi_wready_s <= '1';
-                axi_data_wren_s <= '1';
+                axi_data_wren_s <= '0';
             else 
                 axi_wready_s <= '0';
+                axi_data_wren_s <= '1';
+
             end if;
           --to be completed
         end if;
@@ -234,8 +258,8 @@ begin
 
 
     --condition to write data
-    --axi_data_wren_s <= '1' when ((axi_wready_s = '1') and (axi_wvalid_i = '1')) else
-     --                  '0';
+    --axi_data_wren_s <= '0' when (axi_wready_s = '1' and axi_wvalid_i = '1') else 
+    --                   '1'; 
     
     
     process (reset_s, axi_clk_i)
@@ -243,26 +267,30 @@ begin
         variable int_waddr_v : natural;
     begin
         if reset_s = '1' then
-            
           --to be completed
-          axi_data_wren_s <= '0';
-            
+            test_register_s <= (others => '0');
+            const_register_s <= x"DEADBEEF";
+            leds_register_s <= x"00000000";
+            hex03_register_s <= x"00000000";
+            hex54_register_s <= x"00000000";
+            switch_register_s <= switch_i; -- En gros il s'initalise qu'une seul fois mais on doit le changer quand ça change coté switch réel.
+            keys_register_s <= keys_i;
         elsif rising_edge(axi_clk_i) then
-
-            if axi_data_wren_s = '1' then
+            switch_register_s <= switch_i; -- Donc c'est ce que je teste la mais ça me parrait bizare faudrait un test en plus ou quelque chose.
+            keys_register_s <= keys_i;
+            if axi_data_wren_s = '0' then
                 int_waddr_v   := to_integer(unsigned(axi_waddr_mem_s));
                 case int_waddr_v is
                     when 0   => null; -- constante, on écrit pas dedans
-                    when 1   => test_register_s <= axi_wdata_i; -- Test register 
-                    when 2   => leds_register_s <= axi_wdata_i; -- Leds register 
-                    when 3   => hex03_register_s <= axi_wdata_i; -- HEX3..0 register 
-                    when 4   => hex54_register_s <= axi_wdata_i; -- HEX5..4 register 
+                    when 1   => test_register_s <= axi_wdata_s; -- Test register 
+                    when 2   => leds_register_s <= axi_wdata_s; -- Leds register 
+                    when 3   => hex03_register_s <= axi_wdata_s; -- HEX3..0 register 
+                    when 4   => hex54_register_s <= axi_wdata_s; -- HEX5..4 register 
                     --to be completed
                     when others => null;  --on écrit pas dedans
                 end case;
-                --report "axi_data_wren_s value is" & std_logic'image(axi_data_wren_s);
             end if;
-             
+            --report "axi_data_wren_s value is BLABLABLA ->" & std_logic'image(axi_data_wren_s);
         end if;
     end process;
                     
@@ -274,9 +302,10 @@ begin
    begin 
     if reset_s = '1' then
         axi_bvalid_s <= '0';
+        axi_bresp_s <= "00";
     elsif rising_edge(axi_clk_i) then
     
-        if axi_data_wren_s = '1' then --and axi_data_wren_s = '1') then 
+        if axi_data_wren_s = '0' then --and axi_data_wren_s = '1') then 
             axi_bvalid_s <= '1';
             axi_bresp_s <= "00";
         else
@@ -320,12 +349,14 @@ begin
         if reset_s = '1' then
             --axi_waddr_done_s <= '0'; 
             axi_rvalid_s    <= '0';
-            
+            axi_data_reen_s <= '0';
         elsif rising_edge(axi_clk_i) then
             if(axi_rvalid_s = '0' and axi_rready_i = '1') then 
                 axi_rvalid_s <= '1';
+                axi_data_reen_s <= '0';
             else 
                 axi_rvalid_s <= '0';
+                axi_data_reen_s <= '1';
             end if;
           --to be completed
         end if;
@@ -335,7 +366,8 @@ begin
 
 
     --condition to read data
-    axi_data_reen_s <= '1' when ((axi_rready_i = '1') and (axi_rvalid_s = '1'));
+    --axi_data_reen_s <= '1' when ((axi_rready_i = '1') and (axi_rvalid_s = '1')) else 
+    --                   '0';
     
     
     process (reset_s, axi_clk_i)
@@ -345,12 +377,14 @@ begin
         if reset_s = '1' then
             
           --to be completed
-          axi_data_reen_s <= '0';
+          
+          axi_rdata_s <= (others => '0');
             
         elsif rising_edge(axi_clk_i) then
 
-            if axi_data_reen_s = '1' then
+            if axi_data_reen_s = '0' then
                 int_raddr_v   := to_integer(unsigned(axi_araddr_mem_s));
+                 report "in READ DATA CHANEL";
                 case int_raddr_v is
                     when 0   => axi_rdata_s <= const_register_s; -- constante, on écrit pas dedans
                     when 1   => axi_rdata_s <= test_register_s; -- Test register 
@@ -366,13 +400,18 @@ begin
         end if;
     end process;
    
-   --axi_rdata_o <= axi_rdata_s;
+   axi_rdata_o <= axi_rdata_s;
    axi_rresp_o <= "00";
+   --axi_rvalid_o <= axi_data_wren_s;
 
-   output_reg_A_o  <= const_register_s;
-   output_reg_B_o <= test_register_s;
-   output_reg_C_o <= leds_register_s;
-   output_reg_D_o <= hex03_register_s;
+--    output_reg_A_o <= const_register_s;--const_register_s;
+--    output_reg_B_o <= test_register_s;
+--    output_reg_C_o <= leds_register_s;
+--    output_reg_D_o <= hex03_register_s;
+
+    leds_o      <= leds_register_s; 
+    hex03_o     <= hex03_register_s; 
+    hex54_o     <= hex54_register_s;
 
 
 

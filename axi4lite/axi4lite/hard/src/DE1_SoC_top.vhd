@@ -209,6 +209,13 @@ architecture top of DE1_SoC_top is
             -- Global signals
             clk_clk                         : in    std_logic                     := 'X';             -- clk
         
+            -- User input-output
+            ip_axilite_0_conduit_end_hex03_output : out   std_logic_vector(31 downto 0);                    -- hex03_output
+            ip_axilite_0_conduit_end_hex54_output : out   std_logic_vector(31 downto 0);                    -- hex54_output
+            ip_axilite_0_conduit_end_keys_input   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- keys_input
+            ip_axilite_0_conduit_end_leds_output  : out   std_logic_vector(31 downto 0);                    -- leds_output
+            ip_axilite_0_conduit_end_switch_input : in    std_logic_vector(31 downto 0) := (others => 'X'); -- switch_input
+        
             ------------------------------------
             -- HPS Side
             ------------------------------------
@@ -237,12 +244,23 @@ architecture top of DE1_SoC_top is
             hps_io_hps_io_gpio_inst_GPIO53  : inout std_logic                     := 'X'              -- hps_io_gpio_inst_GPIO53
         );
     end component qsys_system;
-
+    signal temp_hex03_s : std_logic_vector(31 downto 0);
+    signal temp_hex45_s : std_logic_vector(31 downto 0);
+    signal temp_leds_s : std_logic_vector(31 downto 0);
+    signal temp_key : std_logic_vector(31 downto 0);
+    signal temp_sw  : std_logic_vector(31 downto 0);
+    signal temp_zero_key : std_logic_vector(31-4 downto 0);
+    signal temp_zero_sw  : std_logic_vector(31-10 downto 0);
+    
 begin
 
 ---------------------------------------------------------
 --  HPS mapping
 ---------------------------------------------------------
+    temp_zero_key <= (others => '0');
+    temp_zero_sw <= (others => '0');
+    temp_key <=  temp_zero_key & KEY_i ;
+    temp_sw <= temp_zero_sw & SW_i;
 
     System : component qsys_system
     port map (
@@ -252,6 +270,13 @@ begin
     
         -- Global signals
         clk_clk             => CLOCK_50_i,
+        -- user input output 
+        ip_axilite_0_conduit_end_hex03_output => temp_hex03_s,                --                         .hex03_output
+        ip_axilite_0_conduit_end_hex54_output => temp_hex45_s,                --                         .hex54_output
+        ip_axilite_0_conduit_end_keys_input   => temp_key,                  --                         .keys_input
+        ip_axilite_0_conduit_end_leds_output  => temp_leds_s,                 --                         .leds_output
+        ip_axilite_0_conduit_end_switch_input => temp_sw,                --                         .switch_input
+        
         
         ------------------------------------
         -- HPS Side
@@ -281,4 +306,11 @@ begin
         hps_io_hps_io_gpio_inst_GPIO53  => HPS_LED_io
     );
 
+    HEX0_o <= temp_hex03_s(6 downto 0);
+    HEX1_o <= temp_hex03_s(14 downto 8);
+    HEX2_o <= temp_hex03_s(22 downto 16);
+    HEX3_o <= temp_hex03_s(30 downto 24);
+    HEX4_o <= temp_hex45_s(6 downto 0);
+    HEX5_o <= temp_hex45_s(14 downto 8);
+    LEDR_o <= temp_leds_s(9 downto 0);
 end top;
