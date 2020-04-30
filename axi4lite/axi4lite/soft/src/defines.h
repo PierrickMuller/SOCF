@@ -47,7 +47,8 @@ typedef volatile unsigned int vuint;
 
 #define BASE_ADRESSE                    0xFF200000
 
-
+#define CONST_REG       *(vuint *) (BASE_ADRESSE)
+#define TEST_REGISTER   *(vuint *) (BASE_ADRESSE + 0x4)
 #define LEDS            *(vuint *) (BASE_ADRESSE + 0x8)
 #define HEX3_0          *(vuint *) (BASE_ADRESSE + 0xC)
 #define HEX4_5          *(vuint *) (BASE_ADRESSE + 0x10)

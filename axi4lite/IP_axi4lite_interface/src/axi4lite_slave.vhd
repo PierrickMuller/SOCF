@@ -239,15 +239,15 @@ begin
     begin
         if reset_s = '1' then
             --axi_waddr_done_s <= '0'; 
-            axi_data_wren_s <= '1';
+            --axi_data_wren_s <= '1';
             axi_wready_s    <= '0';
         elsif rising_edge(axi_clk_i) then
             if(axi_wready_s = '0' and axi_wvalid_i = '1') then 
                 axi_wready_s <= '1';
-                axi_data_wren_s <= '0';
+                --axi_data_wren_s <= '0';
             else 
                 axi_wready_s <= '0';
-                axi_data_wren_s <= '1';
+                --axi_data_wren_s <= '1';
 
             end if;
           --to be completed
@@ -258,8 +258,8 @@ begin
 
 
     --condition to write data
-    --axi_data_wren_s <= '0' when (axi_wready_s = '1' and axi_wvalid_i = '1') else 
-    --                   '1'; 
+    axi_data_wren_s <= '0' when (axi_wready_s = '1' and axi_wvalid_i = '1') else 
+                       '1'; 
     
     
     process (reset_s, axi_clk_i)
@@ -349,14 +349,14 @@ begin
         if reset_s = '1' then
             --axi_waddr_done_s <= '0'; 
             axi_rvalid_s    <= '0';
-            axi_data_reen_s <= '0';
+            --axi_data_reen_s <= '0';
         elsif rising_edge(axi_clk_i) then
             if(axi_rvalid_s = '0' and axi_rready_i = '1') then 
                 axi_rvalid_s <= '1';
-                axi_data_reen_s <= '0';
+                --axi_data_reen_s <= '0';
             else 
                 axi_rvalid_s <= '0';
-                axi_data_reen_s <= '1';
+               -- axi_data_reen_s <= '1';
             end if;
           --to be completed
         end if;
@@ -366,8 +366,8 @@ begin
 
 
     --condition to read data
-    --axi_data_reen_s <= '1' when ((axi_rready_i = '1') and (axi_rvalid_s = '1')) else 
-    --                   '0';
+    axi_data_reen_s <= '0' when ((axi_rready_i = '1') and (axi_rvalid_s = '1')) else 
+                       '1';
     
     
     process (reset_s, axi_clk_i)
@@ -396,6 +396,8 @@ begin
                     --to be completed
                     when others => null; 
                 end case;
+            --else 
+                --axi_rdata_s <= (others => '0');
             end if;
         end if;
     end process;
