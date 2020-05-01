@@ -69,13 +69,15 @@ entity axi4lite_slave is
          --hex54_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
          
          
-          switch_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-          keys_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        switch_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        keys_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
           
-          leds_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-          hex03_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-          hex54_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0)
+        leds_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        hex03_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        hex54_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+        -- Interruptions 
         
+        irq_o   : out std_logic
         
     );
 end entity axi4lite_slave;
@@ -112,8 +114,9 @@ architecture rtl of axi4lite_slave is
     signal hex54_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal switch_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal keys_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    
-    
+    signal keys_im_register_s   : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal keys_ec_register_s   : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);    
+        
     signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal axi_waddr_done_s     : std_logic;
     
@@ -144,6 +147,7 @@ architecture rtl of axi4lite_slave is
     signal temp_Vect_Strb_3_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
     signal temp_Vect_Strb_4_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
    
+    signal irq_s   : std_logic;
     
 begin
 
@@ -275,8 +279,31 @@ begin
             hex54_register_s <= x"00000000";
             switch_register_s <= switch_i;--vect_input_B_i; 
             keys_register_s <=  keys_i;--vect_input_C_i;
+            keys_im_register_s <= (others => '0');
+            keys_ec_register_s <= (others => '0');
+            irq_s <= '0';
         elsif rising_edge(axi_clk_i) then
             switch_register_s <= switch_i; 
+            
+            if(keys_register_s /= keys_i) then
+                if(keys_register_s(0) = '0' and keys_i(0) = '1' and (keys_im_register_s(0) = '1')) then
+                    keys_ec_register_s(0) <= '1';
+                    irq_s <= '1';
+                end if;
+                if(keys_register_s(1) = '0' and keys_i(1) = '1' and (keys_im_register_s(1) = '1')) then
+                    keys_ec_register_s(1) <= '1';
+                    irq_s <= '1';
+                end if;
+                if(keys_register_s(2) = '0' and keys_i(2) = '1' and (keys_im_register_s(2) = '1')) then
+                    keys_ec_register_s(2) <= '1';
+                    irq_s <= '1';
+                end if;
+                if(keys_register_s(3) = '0' and keys_i(3) = '1' and (keys_im_register_s(3) = '1')) then
+                    keys_ec_register_s(3) <= '1';
+                    irq_s <= '1';
+                end if;
+            end if;
+            
             keys_register_s <= keys_i;
             if axi_data_wren_s = '0' then
                 int_waddr_v   := to_integer(unsigned(axi_waddr_mem_s));
@@ -286,13 +313,15 @@ begin
                     when 2   => leds_register_s <= axi_wdata_s; -- Leds register 
                     when 3   => hex03_register_s <= axi_wdata_s; -- HEX3..0 register 
                     when 4   => hex54_register_s <= axi_wdata_s; -- HEX5..4 register 
+                    when 7   => keys_im_register_s <= axi_wdata_s;
+                    when 8   => keys_ec_register_s <= (others => '0');irq_s <= '0';
                     when others => null;  --on écrit pas dedans
                 end case;
             end if;
         end if;
     end process;
                     
-    
+    irq_o <= irq_s;
 -----------------------------------------------------------
 -- Write response channel
 
@@ -385,6 +414,8 @@ begin
                     when 4   => axi_rdata_s <= hex54_register_s; -- HEX5..4 register
                     when 5   => axi_rdata_s <= switch_register_s; -- switch_register_s
                     when 6   => axi_rdata_s <= keys_register_s;
+                    when 7   => axi_rdata_s <= keys_im_register_s;
+                    when 8   => axi_rdata_s <= keys_ec_register_s;
                     when others => null; 
                 end case;
             else

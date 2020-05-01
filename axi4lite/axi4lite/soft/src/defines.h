@@ -46,6 +46,8 @@ typedef volatile unsigned int vuint;
 #define		INT_DISABLE				0b11000000
 
 #define BASE_ADRESSE                    0xFF200000
+#define GIC_DISTRIBUTOR_BASE_ADRESSE    0xFFFED000
+#define GIC_CPU_INTERFACE_BASE_ADRESSE  0xFFFEC100
 
 #define CONST_REG       *(vuint *) (BASE_ADRESSE)
 #define TEST_REGISTER   *(vuint *) (BASE_ADRESSE + 0x4)
@@ -54,8 +56,20 @@ typedef volatile unsigned int vuint;
 #define HEX4_5          *(vuint *) (BASE_ADRESSE + 0x10)
 #define SWITCHS         *(vuint *) (BASE_ADRESSE + 0x14)
 #define KEYS            *(vuint *) (BASE_ADRESSE + 0x18)
+#define KEYS_INTERRUPT_ENABLE  *(vuint *) (BASE_ADRESSE + 0x1C)
+#define KEYS_INTERRUPT_REGISTER *(vuint *) (BASE_ADRESSE + 0x20)
 
 // MASKS 
-#define MASK_SWITCH     0x2FF
+#define MASK_SWITCH     0x3FF
 #define MASK_KEY        0xF
+
+#define ICCICR          *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x0)
+#define ICCPMR          *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x4)
+#define ICCIAR          *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0xc)
+#define ICCEOIR         *(vuint *) (GIC_CPU_INTERFACE_BASE_ADRESSE + 0x10)
+
+#define ICDDCR          *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x0)
+#define ICDISER         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x100 + 8  )//(floor(72 / 32) * 4)
+#define ICDIPTR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0x800 + 72 + 0) //(72/4)*4 + (72%4))
+#define ICDICFR         *(vuint *) (GIC_DISTRIBUTOR_BASE_ADRESSE + 0xC00 + 16) //(72/16)*4
 
