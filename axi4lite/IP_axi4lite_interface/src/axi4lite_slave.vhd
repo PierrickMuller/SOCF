@@ -347,11 +347,11 @@ begin
     process (reset_s, axi_clk_i)
     begin
         if reset_s = '1' then
-            --axi_waddr_done_s <= '0'; 
+            --d-axi_waddr_done_s <= '0'; 
             axi_rvalid_s    <= '0';
             --axi_data_reen_s <= '0';
         elsif rising_edge(axi_clk_i) then
-            if(axi_rvalid_s = '0' and axi_rready_i = '1') then 
+            iF(axi_arready_s = '1') then--if(axi_rvalid_s = '0' and axi_rready_i = '1') then 
                 axi_rvalid_s <= '1';
                 --axi_data_reen_s <= '0';
             else 
