@@ -55,4 +55,7 @@ typedef volatile unsigned int vuint;
 #define SWITCHS         *(vuint *) (BASE_ADRESSE + 0x14)
 #define KEYS            *(vuint *) (BASE_ADRESSE + 0x18)
 
+// MASKS 
+#define MASK_SWITCH     0x2FF
+#define MASK_KEY        0xF
 
