@@ -1,0 +1,23 @@
+\section{Introduction}
+
+\subsection{Objectifs}
+Ce laboratoire a pour but de réaliser une IP avec une interface AXI4-lite et connectée sur le bus Lightweight HPS-to-FPGA. Cette IP doit permettre d’accéder à des I/O câblées sur  la  partie  FPGA  via  des registres.  Vous  devrez  analyser  le  fonctionnement  du  bus AXI4-lite afin de concevoir une IP personnalisée pour les besoins du laboratoire.
+
+\subsection{Spécifications sans les interruptions}
+L'objectif est d'interfacer à l'aide d'une IPAXI4-litetous les I/O disponibles sur la FPGA, sans utiliser des composants PIO, soit les boutons (KEYs), les switchs (SW), les LEDs et les afficheurs 7 segments.\\\\ 
+Votre IP AXI4-lite comprendra une constante 32 bits à l’offset 0x0 ainsi qu'un registre de test R/W à l’offset 0x4. Les offsets sont relatifs à l’adresse de base donnée à l'instance de l’IP dans Qsys.\\\\
+Spécifications du programme:\\
+Le but est d’allumer les LEDs selon l’état des boutons (KEYs) et interrupteurs (switch) disponibles.  Les  afficheurs  7  segments  sont  dépendants  de  la  constante  définie  dans l’IP. La spécification du fonctionnement est la suivante:\\
+\begin{itemize}
+	\item Appui sur KEY0: l'états des switches est copiés sur les LEDs. Les afficheurs HEX5 à HEX0 affichent en hexadécimal les bits 23 à 0 de la constante définie dans l’IP.\\
+	\item Appui  sur  KEY1: l'états inversesdes  switches  est  copiés  sur  les  LEDs.  Les afficheurs HEX5 àHEX0 affichent en hexadécimal l’inversedes bits 23 à 0 de la constante définie dans l’IP
+	\item Appui  sur  KEY2: l’affichage des LEDset  des  afficheurs  7  segments  subit  une rotation à droite. Rotation d’un bit pour les LEDs, rotation d’un afficheur complet pour les afficheurs 7 segments.
+	\item Appui  sur  KEY3: l’affichage des LEDs et des afficheurs 7 segments subit une rotation à gauche. Rotation d’un bit pour les LEDs, rotation d’un afficheur complet pour les afficheurs 7 segments.\\
+\end{itemize}
+
+
+Dans une seconde partie, l’appui sur les boutons KEY2 ou KEY3 devra être géré à l'aide d'interruption vers le HPS (2ème partie).\\
+
+\begin{itemize}
+	\item Votre  design  doit  permettre  degénérer  une  interruption  lors  de  l'activation (détection de flanc) d'un des 4 boutons. Vous devez prévoir les accès et les flags nécessaires   pour   gérer   l'interruption.   Il   doit   être   possible   d'activer/masquer l'interruption pour chaque bouton.\\
+\end{itemize}
