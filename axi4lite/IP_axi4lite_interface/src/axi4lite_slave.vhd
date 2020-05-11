@@ -9,9 +9,8 @@
 --| Modifications |-----------------------------------------------------------
 -- Ver  Date       Auteur  Description
 -- 1.0  26.03.2019  EMI    Adaptation du chablon pour les etudiants  
---
+-- 1.1  08.05.2029  PMR    Complétion du laboratoire
 ------------------------------------------------------------------------------
--- Pas utiliser les deux bits de poids faible
 
 
 library ieee;
@@ -38,7 +37,7 @@ entity axi4lite_slave is
         axi_awvalid_i   : in  std_logic;
         axi_awready_o   : out std_logic;
         axi_wdata_i     : in  std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        axi_wstrb_i     : in std_logic_vector((AXI_DATA_WIDTH/8)-1 downto 0); -- A gérer aussi 
+        axi_wstrb_i     : in std_logic_vector((AXI_DATA_WIDTH/8)-1 downto 0); 
         axi_wvalid_i    : in  std_logic;
         axi_wready_o    : out std_logic;
         axi_bresp_o     : out std_logic_vector(1 downto 0);
@@ -52,6 +51,7 @@ entity axi4lite_slave is
         axi_rresp_o     : out std_logic_vector(1 downto 0);
         axi_rvalid_o    : out std_logic;
         axi_rready_i    : in  std_logic;
+        
         -- User input-output
         
         --TEST POUR TESTBENCH 
@@ -59,15 +59,12 @@ entity axi4lite_slave is
 --           vect_input_B_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
 --           vect_input_C_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
 --           vect_input_D_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
---  --         
+--         
 --           output_reg_A_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
 --           output_reg_B_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
 --           output_reg_C_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
 --           output_reg_D_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0) 
-         --leds_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-         --hex03_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-         --hex54_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-         
+
          
         switch_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
         keys_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
@@ -100,6 +97,8 @@ architecture rtl of axi4lite_slave is
     signal axi_rvalid_s        : std_logic;
     signal axi_bvalid_s        : std_logic;
     signal axi_bresp_s         : std_logic_vector(1 downto 0);
+    signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
+    signal axi_wdata_s    : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
      --intern signal for the axi interface
     signal axi_waddr_mem_s     : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
     signal axi_araddr_mem_s    : std_logic_vector(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
@@ -117,12 +116,23 @@ architecture rtl of axi4lite_slave is
     signal keys_im_register_s   : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal keys_ec_register_s   : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);    
         
-    signal axi_rdata_s          : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    signal axi_waddr_done_s     : std_logic;
-    
+    -- signaux permettant la gestion du strobe 
+    signal temp_Vect_Strb_1_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_2_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_3_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+    signal temp_Vect_Strb_4_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
+   
+    -- signal d'interruption
+    signal irq_s   : std_logic;
 
+    -- signaux de masquage pour la lecture des registres
+    signal KEY_MASK_s    : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
+    signal SWITCH_LEDS_MASK_s : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
+    signal HEX54_MASK_s  : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
+    signal HEX03_MASK_s  : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
     
---intern signal for adress decoding
+--intern signal for adress decoding (Prévus dans la première version)
+
 --signal local_address_write_s      : integer;
 --signal local_address_read_s       : integer;
 --signal const_register_address_valid_write_s : std_logic;
@@ -141,19 +151,16 @@ architecture rtl of axi4lite_slave is
 --signal keys_register_address_valid_read_s : std_logic;
 
 
-    signal axi_wdata_s    : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    signal temp_Vect_Strb_1_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
-    signal temp_Vect_Strb_2_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
-    signal temp_Vect_Strb_3_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
-    signal temp_Vect_Strb_4_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
-   
-    signal irq_s   : std_logic;
+
     
 begin
 
     reset_s  <= axi_reset_i;
-
-    --axi_wdata_s <= axi_wdata_i;
+    
+   
+     
+    
+-- Ce code ci-dessous présente le premier essai basé sur le document présentant l'implémentation d'une IP axi_lite
 -----------------------------------------------------------
 -- address decoding
 
@@ -208,7 +215,8 @@ begin
 -- Write address channel
 
     -- GESTION DU STROBE
-    temp_Vect_Strb_1_s <= axi_wdata_i(7 downto 0) when axi_wstrb_i(0) = '1' else (others => '0');
+    -- On récupère les bits voulus en fonction du strobe et on assemble les résultats dans un signal temporaire (axi_wdata_s)
+    temp_Vect_Strb_1_s <= axi_wdata_i(7 downto 0) when axi_wstrb_i(0) = '1' else (others => '0'); 
     temp_Vect_Strb_2_s <= axi_wdata_i(15 downto 8) when axi_wstrb_i(1) = '1' else (others => '0');
     temp_Vect_Strb_3_s <= axi_wdata_i(23 downto 16) when axi_wstrb_i(2) = '1' else (others => '0');
     temp_Vect_Strb_4_s <= axi_wdata_i(31 downto 24) when axi_wstrb_i(3) = '1' else (others => '0');
@@ -242,26 +250,21 @@ begin
     process (reset_s, axi_clk_i)
     begin
         if reset_s = '1' then
-            --axi_waddr_done_s <= '0'; 
-            --axi_data_wren_s <= '1';
             axi_wready_s    <= '0';
         elsif rising_edge(axi_clk_i) then
             if(axi_wready_s = '0' and axi_wvalid_i = '1') then 
                 axi_wready_s <= '1';
-                --axi_data_wren_s <= '0';
             else 
                 axi_wready_s <= '0';
-                --axi_data_wren_s <= '1';
-
             end if;
-          --to be completed
         end if;
     end process;
     
+    -- Assignation de la sortie axi_wready_o
     axi_wready_o <= axi_wready_s;
 
 
-    --condition to write data
+    --condition to write data. On peut écrire des données quand axi_wready_s et axi_wvalid_i sont actif (Selon documentation axi_lite)
     axi_data_wren_s <= '0' when (axi_wready_s = '1' and axi_wvalid_i = '1') else 
                        '1'; 
     
@@ -271,7 +274,7 @@ begin
         variable int_waddr_v : natural;
     begin
         if reset_s = '1' then
-          --to be completed
+            --Assignation des valeurs de base aux registres et au signal d'interruption lors du reset
             test_register_s <= (others => '0');--vect_input_A_i;
             const_register_s <= x"DEADBEEF";
             leds_register_s <= x"00000000";
@@ -282,9 +285,29 @@ begin
             keys_im_register_s <= (others => '0');
             keys_ec_register_s <= (others => '0');
             irq_s <= '0';
+            
+             -- création des masques 
+            KEY_MASK_s <= (others => '0');
+            SWITCH_LEDS_MASK_s <= (others => '0');
+            HEX03_MASK_s <= (others => '1');
+            HEX54_MASK_s <= (others => '1');
+            
+            KEY_MASK_s(3 downto 0) <= (others => '1');
+            SWITCH_LEDS_MASK_s(9 downto 0) <= (others => '1');
+            HEX03_MASK_s(31) <= '0';
+            HEX03_MASK_s(23) <= '0';
+            HEX03_MASK_s(15) <= '0';
+            HEX03_MASK_s(7)  <= '0';
+            HEX54_MASK_s(31 downto 15) <= (others => '0');
+            HEX54_MASK_s(7)  <= '0';    
         elsif rising_edge(axi_clk_i) then
+            -- Récupération de la valeur des switchs dans le registre du bus axi_lite correspondant
             switch_register_s <= switch_i; 
             
+            -- GESTION DE L'INTERRUPTION 
+            -- Si un bouton à été appuyé, on regarde quel bouton est actif, on s'assure que le registre de masque d'interruption est  
+            -- actif pour le bit correspondant au bouton actif, on remplit le bit du registre d'edge capture correspondant et on active
+            -- le signal générant l'irq
             if(keys_register_s /= keys_i) then
                 if(keys_register_s(0) = '0' and keys_i(0) = '1' and (keys_im_register_s(0) = '1')) then
                     keys_ec_register_s(0) <= '1';
@@ -304,23 +327,35 @@ begin
                 end if;
             end if;
             
+            -- Récupération de la valeur des boutons dans le registre du bus axi_lite correspondant
             keys_register_s <= keys_i;
+            
+            -- Si on peut écrire
             if axi_data_wren_s = '0' then
+            
+                -- On transforme l'adresse mémorisée en entier et on effectue l'écriture souhaitée en fonction de l'addresse. 
+                -- J'ai choisit d'appliquer ici un masque assurant que la valeur écrite suive le plan d'addressage et permettant
+                -- de contenir dans les registres les valeurs souhaitées lors par la suite de la lecture du registre selon le plan 
+                -- d'adressage. Ce traitement pourrait être fait dans la partie lecture, mais je préfère avoir le contrôle sur ce 
+                -- qui est écrit dans mes registres plutôt que de renvoyer lors de la lecture un contenu modifié du registre afin
+                -- de coller au plan d'addressage (Lecture de '0' pour certains bits). De plus, la gestion des lectures avec les 
+                -- bits à '0' pour les keys et les switchs est gérée directement dans le top de la DE1-SOC
                 int_waddr_v   := to_integer(unsigned(axi_waddr_mem_s));
                 case int_waddr_v is
                     when 0   => null; -- constante, on écrit pas dedans
                     when 1   => test_register_s <= axi_wdata_s; -- Test register 
-                    when 2   => leds_register_s <= axi_wdata_s; -- Leds register 
-                    when 3   => hex03_register_s <= axi_wdata_s; -- HEX3..0 register 
-                    when 4   => hex54_register_s <= axi_wdata_s; -- HEX5..4 register 
-                    when 7   => keys_im_register_s <= axi_wdata_s;
+                    when 2   => leds_register_s <= axi_wdata_s and SWITCH_LEDS_MASK_s; -- Leds register 
+                    when 3   => hex03_register_s <= axi_wdata_s and HEX03_MASK_s; -- HEX3..0 register 
+                    when 4   => hex54_register_s <= axi_wdata_s and HEX54_MASK_s; -- HEX5..4 register 
+                    when 7   => keys_im_register_s <= axi_wdata_s and KEY_MASK_s;
                     when 8   => keys_ec_register_s <= (others => '0');irq_s <= '0';
                     when others => null;  --on écrit pas dedans
                 end case;
             end if;
         end if;
     end process;
-                    
+    
+    -- Assigniation de l'interruption 
     irq_o <= irq_s;
 -----------------------------------------------------------
 -- Write response channel
@@ -328,10 +363,12 @@ begin
    process (reset_s , axi_clk_i)
    begin 
     if reset_s = '1' then
+        -- Assigniation des valeurs de base pour les signaux du canal réponse de write
         axi_bvalid_s <= '0';
         axi_bresp_s <= "00";
     elsif rising_edge(axi_clk_i) then
-    
+        -- Si on peut écrire, on met le signal bvalid_s actif. La réponse sera toujours 00 dans notre cas. Je laisse l'assigniation de 
+        -- la réponse ici dans le cas d'une future modification.
         if axi_data_wren_s = '0' then 
             axi_bvalid_s <= '1';
             axi_bresp_s <= "00";
@@ -341,6 +378,7 @@ begin
     end if;
    end process;
    
+   -- Assignation des signaux de réponses 
    axi_bvalid_o <= axi_bvalid_s;
    axi_bresp_o <= axi_bresp_s;
 
@@ -360,50 +398,31 @@ begin
                 axi_arready_s    <= '1';
                 -- Read Address memorizing
                 axi_araddr_mem_s <= axi_araddr_i(AXI_ADDR_WIDTH-1 downto ADDR_LSB);
-                
             else
                 axi_arready_s    <= '0';
             end if;
         end if;
     end process;
+    
     axi_arready_o <= axi_arready_s;
 
 -----------------------------------------------------------
 -- Read data channel
 
-    --to be completedn
-    --process (reset_s, axi_clk_i)
-    --begin
-    --    if reset_s = '1' then
-    --       axi_rvalid_s    <= '0';
-    --    elsif rising_edge(axi_clk_i) then
-    --        if axi_arready_s = '0' and axi_arvalid_i = '1' then
-    --            axi_rvalid_s <= '1';
-    --        elsif (axi_rready_i = '1') then 
-    --            axi_rvalid_s <= '0';
-    --        end if;
-    --    end if;
-    -- end process;
-    
-    
 
-
-    --condition to read data
-    --axi_data_reen_s <= '0' when (axi_rvalid_s = '1') and (axi_rready_i = '1') else
-    --                   '1';
-    
-    
     process (reset_s, axi_clk_i)
         --number address to access 32 or 64 bits data
         variable int_raddr_v : natural;
     begin
         if reset_s = '1' then
-            
+
           axi_rdata_s <= (others => '0');
           axi_rvalid_s    <= '0';
         elsif rising_edge(axi_clk_i) then
-
-            if axi_arready_s = '1' and axi_arvalid_i = '1' then--axi_data_reen_s = '0' then
+            -- Afin de respecter les timings, pour pouvoir remplir le signal axi_rdata_s, on doit s'assurer que axi_arready_s et axi_arvalid_i soit à 1
+            -- si c'est le cas, on met axi_rvalid_s actif, on récupère l'adresse recu pour la lecture et on remplit le axi_rdata_s avec le 
+            -- contenu du registre correspondant.
+            if axi_arready_s = '1' and axi_arvalid_i = '1' then
                 axi_rvalid_s <= '1';
                 int_raddr_v   := to_integer(unsigned(axi_araddr_mem_s));
                 case int_raddr_v is
@@ -412,11 +431,11 @@ begin
                     when 2   => axi_rdata_s <= leds_register_s; -- Leds register 
                     when 3   => axi_rdata_s <= hex03_register_s; -- HEX3..0 register 
                     when 4   => axi_rdata_s <= hex54_register_s; -- HEX5..4 register
-                    when 5   => axi_rdata_s <= switch_register_s; -- switch_register_s
-                    when 6   => axi_rdata_s <= keys_register_s;
-                    when 7   => axi_rdata_s <= keys_im_register_s;
-                    when 8   => axi_rdata_s <= keys_ec_register_s;
-                    when others => null; 
+                    when 5   => axi_rdata_s <= switch_register_s; -- switch register
+                    when 6   => axi_rdata_s <= keys_register_s;   -- key register 
+                    when 7   => axi_rdata_s <= keys_im_register_s; -- interrupt mask register
+                    when 8   => axi_rdata_s <= keys_ec_register_s; -- edge capture register
+                    when others => null;    -- Dans les autres cas, on ne fait rien
                 end case;
             else
                 axi_rvalid_s <= '0';
@@ -424,16 +443,19 @@ begin
         end if;
     end process;
     
+   -- Assignation des sorties des canaux de lectures 
    axi_rvalid_o <= axi_rvalid_s;
    axi_rdata_o <= axi_rdata_s;
    axi_rresp_o <= "00";
-   --axi_rvalid_o <= axi_data_wren_s;
 
+
+   -- Assignation pour test-bench
 --     output_reg_A_o <= const_register_s; --const_register_s;
 --     output_reg_B_o <= test_register_s;
 --     output_reg_C_o <= leds_register_s;
 --     output_reg_D_o <= hex03_register_s;
 
+    -- Assignation des I/O 
     leds_o      <= leds_register_s; 
     hex03_o     <= hex03_register_s; 
     hex54_o     <= hex54_register_s;

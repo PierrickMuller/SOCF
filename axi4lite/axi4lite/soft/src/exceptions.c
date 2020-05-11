@@ -45,10 +45,6 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
     if (press & 0x4)       // KEY2
     {
 	  // On deplace les leds vers la droite ainsi que les valeurs des afficheurs 7 segments
-      /*LEDS = (LEDS >> 1) | ((LEDS & (0x1 ))<<9);
-      hex_val = HEX3_0;
-      HEX3_0 = ~0x0;
-      HEX3_0 = (0x0 | ((hex_val & (0x7F)) << 24) | ((hex_val & (0x7F << 24)) >> 8) | ((hex_val & (0x7F << 16)) >> 8) | ((hex_val & (0x7F << 8))>>8));*/
       leds_val = LEDS;
       LEDS = 0x0;
       LEDS = (leds_val >> 1) | ((leds_val & (0x1))<<9);
@@ -63,10 +59,6 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
     else if (press & 0x8)	// KEY3
     {
 	  // On deplace les leds vers la gauche ainsi que les valeurs des afficheurs 7 segments
-      /*LEDS = (LEDS << 1) | ((LEDS & (0x1 << 9))>>9);
-      hex_val = HEX3_0;
-      HEX3_0 = ~0x0;
-      HEX3_0 = (0x0 | ((hex_val & (0x7F << 16)) << 8) | ((hex_val & (0x7F << 8)) << 8) | ((hex_val & (0x7F )) << 8) | ((hex_val & (0x7F << 24))>>24)); */
       leds_val = LEDS;
       LEDS = (leds_val << 1) | ((leds_val & (0x1 << 9))>>9);
       hex30_val = HEX3_0;

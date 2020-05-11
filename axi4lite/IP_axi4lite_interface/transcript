@@ -19,7 +19,7 @@ do ./run_axi4lite_slave_tb.tcl
 # vmap work work 
 # Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
 # QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 00:13:35 on May 02,2020
+# Start time: 10:54:55 on May 11,2020
 # vcom -reportprogress 300 -work work ../src/axi4lite_slave.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -27,10 +27,10 @@ do ./run_axi4lite_slave_tb.tcl
 # -- Loading package NUMERIC_STD
 # -- Compiling entity axi4lite_slave
 # -- Compiling architecture rtl of axi4lite_slave
-# End time: 00:13:35 on May 02,2020, Elapsed time: 0:00:00
+# End time: 10:54:55 on May 11,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
-# Start time: 00:13:35 on May 02,2020
+# Start time: 10:54:55 on May 11,2020
 # vcom -reportprogress 300 -work work ../src_tb/axi4lite_slave_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -49,10 +49,22 @@ do ./run_axi4lite_slave_tb.tcl
 # ** Error: ../src_tb/axi4lite_slave_tb.vhd(148): (vcom-1484) Unknown formal identifier "output_reg_C_o".
 # ** Error: ../src_tb/axi4lite_slave_tb.vhd(149): (vcom-1484) Unknown formal identifier "output_reg_D_o".
 # ** Error: ../src_tb/axi4lite_slave_tb.vhd(305): VHDL Compiler exiting
-# End time: 00:13:35 on May 02,2020, Elapsed time: 0:00:00
+# End time: 10:54:56 on May 11,2020, Elapsed time: 0:00:01
 # Errors: 9, Warnings: 1
 # ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
 # Error in macro ././run_axi4lite_slave_tb.tcl line 30
 # /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
 #     while executing
 # "vcom -reportprogress 300 -work work   ../src_tb/axi4lite_slave_tb.vhd"
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit
+# Break key hit

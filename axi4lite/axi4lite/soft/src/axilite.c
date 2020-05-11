@@ -117,7 +117,9 @@ int main(void){
             HEX3_0 = ~(0x0 | (temp[(~const_value & 0xF000) >> 12] << 24) | (temp[(~const_value & 0xF00) >> 8] << 16) | (temp[(~const_value & 0xF0) >> 4 ] << 8) | (temp[(~const_value & 0xF)]));
             HEX4_5 = ~(0x0 | (temp[(~const_value & 0xF00000) >> 20] << 8) | (temp[(~const_value & 0xF0000) >> 16] ) );
         }
-        //LEDS = KEYS_INTERRUPT_REGISTER;
+        
+        // Code partie 1 
+        
         /*else if(!(KEYS & 0x4))
         {
             // On deplace les leds vers la droite ainsi que les valeurs des afficheurs 7 segments
