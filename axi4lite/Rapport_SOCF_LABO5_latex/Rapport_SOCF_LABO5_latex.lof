@@ -1,11 +1,15 @@
 \babel@toc {french}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Laboratoire 2 : Address map\relax }}{4}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Laboratoire 2 : PIOs\relax }}{5}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Laboratoire 2 : Instantiation template\relax }}{6}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Laboratoire 2 : Num\IeC {\'e}ro de l'interruption\relax }}{7}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Laboratoire 2 : Appui key 0 avec switch down\relax }}{10}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Laboratoire 2 : Appui key 1 avec switch down\relax }}{11}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Laboratoire 2 : Appui key 0 avec switch up/down\relax }}{11}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Laboratoire 2 : Appui key 1 avec switch up/down\relax }}{12}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Laboratoire 2 : Appui 2 fois sur key 3\relax }}{12}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Laboratoire 2 : Appui 1 fois sur key 2\relax }}{13}{figure.10}
+\contentsline {figure}{\numberline {1}{\ignorespaces Laboratoire 5 : Signals et Interfaces\relax }}{6}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Laboratoire 5 : Projet Qsys\relax }}{7}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Laboratoire 5 : Timing read\relax }}{9}{figure.caption.2}
+\contentsline {figure}{\numberline {4}{\ignorespaces Laboratoire 5 : Timing write\relax }}{9}{figure.caption.2}
+\contentsline {figure}{\numberline {5}{\ignorespaces Laboratoire 5 : Timing impl\IeC {\'e}mentation bus axi lite\relax }}{9}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Laboratoire 5 : Write avec diff\IeC {\'e}rents strobes\relax }}{10}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Laboratoire 5 : Read apr\IeC {\`e}s different strobes\relax }}{10}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Laboratoire 5 : Read Signal Tap 2\relax }}{10}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Laboratoire 5 : Appuis sur key 0, switch down\relax }}{11}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Laboratoire 5 : Appuis sur key 1, switch down\relax }}{12}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Laboratoire 5 : Appuis sur key 0, switch altern\IeC {\'e}s\relax }}{12}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Laboratoire 5 : Appuis sur key 1, switch altern\IeC {\'e}s\relax }}{13}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Laboratoire 5 : 2 Appuis sur key 3\relax }}{13}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Laboratoire 5 : 1 Appuis sur key 2\relax }}{14}{figure.14}

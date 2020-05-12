@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.28)  8 MAY 2020 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.28)  12 MAY 2020 14:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -715,12 +715,12 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count143
 
 (./chapitres/premiere_page.tex
-<./images/logo_heig.pdf, id=72, 274.02374pt x 83.31125pt>
+<./images/logo_heig.pdf, id=84, 274.02374pt x 83.31125pt>
 File: ./images/logo_heig.pdf Graphic file (type pdf)
 <use ./images/logo_heig.pdf>
 Package pdftex.def Info: ./images/logo_heig.pdf  used on input line 10.
 (pdftex.def)             Requested size: 187.1741pt x 56.9055pt.
-<./images/logo_hesso.pdf, id=73, 217.81375pt x 112.42pt>
+<./images/logo_hesso.pdf, id=85, 217.81375pt x 112.42pt>
 File: ./images/logo_hesso.pdf Graphic file (type pdf)
 <use ./images/logo_hesso.pdf>
 Package pdftex.def Info: ./images/logo_hesso.pdf  used on input line 11.
@@ -760,7 +760,7 @@ Overfull \hbox (28.16034pt too wide) in paragraph at lines 23--27
  [] 
  []
 
-<./images/logo_reds.pdf, id=74, 427.5975pt x 213.79875pt>
+<./images/logo_reds.pdf, id=86, 427.5975pt x 213.79875pt>
 File: ./images/logo_reds.pdf Graphic file (type pdf)
 <use ./images/logo_reds.pdf>
 Package pdftex.def Info: ./images/logo_reds.pdf  used on input line 49.
@@ -812,270 +812,315 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
  []
 
 ) (./chapitres/AnalyseEtConception.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-<./images/address_map.png, id=124, 515.9275pt x 134.5025pt>
-File: ./images/address_map.png Graphic file (type png)
-<use ./images/address_map.png>
-Package pdftex.def Info: ./images/address_map.png  used on input line 26.
-(pdftex.def)             Requested size: 309.55888pt x 80.7021pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+[4]) (./chapitres/RealisationEtImplementation.tex [5]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Overfull \hbox (103.68837pt too wide) in paragraph at lines 15--16
+[]\T1/lmr/m/n/12 Ajout des in-ter-faces (al-tera_axi4lite_slave,clock_sink,cond
+uit_end,interrupt_sender,reset_sink) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+<./images/axilite_ip_signals_interface.png, id=147, 270.00874pt x 596.2275pt>
+File: ./images/axilite_ip_signals_interface.png Graphic file (type png)
+<use ./images/axilite_ip_signals_interface.png>
+Package pdftex.def Info: ./images/axilite_ip_signals_interface.png  used on inp
+ut line 19.
+(pdftex.def)             Requested size: 162.00648pt x 357.73926pt.
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 27.
+(caption)                outside box or environment on input line 20.
 See the caption package documentation for explanation.
 
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 27.
-See the caption package documentation for explanation.
-
-) (./chapitres/RealisationEtImplementation.tex [4 <./images/address_map.png>]
-<./images/pios.png, id=131, 1407.2575pt x 557.08125pt>
-File: ./images/pios.png Graphic file (type png)
-<use ./images/pios.png>
-Package pdftex.def Info: ./images/pios.png  used on input line 9.
-(pdftex.def)             Requested size: 422.18051pt x 167.12566pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 10.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-<./images/show_instantiation_template.png, id=132, 1079.03125pt x 544.0325pt>
-File: ./images/show_instantiation_template.png Graphic file (type png)
-<use ./images/show_instantiation_template.png>
-Package pdftex.def Info: ./images/show_instantiation_template.png  used on inpu
-t line 27.
-(pdftex.def)             Requested size: 431.60486pt x 217.60915pt.
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 28.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (4.8135pt too wide) in paragraph at lines 27--28
-[][] 
- []
-
-[5 <./images/pios.png>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [6 <./images/show_instantiation_template.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-
- []
-
-<./images/fpga_irq0.png, id=176, 866.23625pt x 66.2475pt>
-File: ./images/fpga_irq0.png Graphic file (type png)
-<use ./images/fpga_irq0.png>
-Package pdftex.def Info: ./images/fpga_irq0.png  used on input line 85.
-(pdftex.def)             Requested size: 433.11707pt x 33.12366pt.
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 86.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (6.32571pt too wide) in paragraph at lines 85--86
-[][] 
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-)
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
-
- []
-
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 98.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
-File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [7 <./images/fpga_irq0.png>]
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 100.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
-File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-)
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 100.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-[9]) (./chapitres/Simulation.tex
-<./images/appuiKey0SwitchDown.jpeg, id=285, 1284.8pt x 722.7pt>
-File: ./images/appuiKey0SwitchDown.jpeg Graphic file (type jpg)
-<use ./images/appuiKey0SwitchDown.jpeg>
-Package pdftex.def Info: ./images/appuiKey0SwitchDown.jpeg  used on input line 
-5.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 6.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--6
-
- []
-
-<./images/appuiKey1SwitchDown.jpeg, id=286, 1284.8pt x 722.7pt>
-File: ./images/appuiKey1SwitchDown.jpeg Graphic file (type jpg)
-<use ./images/appuiKey1SwitchDown.jpeg>
-Package pdftex.def Info: ./images/appuiKey1SwitchDown.jpeg  used on input line 
-7.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 8.
-See the caption package documentation for explanation.
-
-[10 <./images/appuiKey0SwitchDown.jpeg>]
-<./images/appuiKey0SwitchUp.jpeg, id=306, 1284.8pt x 722.7pt>
-File: ./images/appuiKey0SwitchUp.jpeg Graphic file (type jpg)
-<use ./images/appuiKey0SwitchUp.jpeg>
-Package pdftex.def Info: ./images/appuiKey0SwitchUp.jpeg  used on input line 11
-.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 12.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10--12
-
- []
-
-<./images/appuiKey1SwitchUp.jpeg, id=307, 1284.8pt x 722.7pt>
-File: ./images/appuiKey1SwitchUp.jpeg Graphic file (type jpg)
-<use ./images/appuiKey1SwitchUp.jpeg>
-Package pdftex.def Info: ./images/appuiKey1SwitchUp.jpeg  used on input line 13
-.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 14.
-See the caption package documentation for explanation.
-
-[11 <./images/appuiKey1SwitchDown.jpeg> <./images/appuiKey0SwitchUp.jpeg>]
-<./images/appuiKey3.jpeg, id=314, 1284.8pt x 722.7pt>
-File: ./images/appuiKey3.jpeg Graphic file (type jpg)
-<use ./images/appuiKey3.jpeg>
-Package pdftex.def Info: ./images/appuiKey3.jpeg  used on input line 17.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 18.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
-
- []
-
-<./images/appuiKey2.jpeg, id=315, 1284.8pt x 722.7pt>
-File: ./images/appuiKey2.jpeg Graphic file (type jpg)
-<use ./images/appuiKey2.jpeg>
-Package pdftex.def Info: ./images/appuiKey2.jpeg  used on input line 19.
-(pdftex.def)             Requested size: 385.44298pt x 216.81166pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 20.
 See the caption package documentation for explanation.
 
-[12 <./images/appuiKey1SwitchUp.jpeg> <./images/appuiKey3.jpeg>])
-(./chapitres/Conclusion.tex)
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+[6 <./images/axilite_ip_signals_interface.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+<./images/cablage_qsys.png, id=155, 885.3075pt x 329.23pt>
+File: ./images/cablage_qsys.png Graphic file (type png)
+<use ./images/cablage_qsys.png>
+Package pdftex.def Info: ./images/cablage_qsys.png  used on input line 31.
+(pdftex.def)             Requested size: 442.65266pt x 164.6146pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 32.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (15.86131pt too wide) in paragraph at lines 31--32
+[] 
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+[7 <./images/cablage_qsys.png>]
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 53.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
+))
+(./chapitres/Simulation.tex [8]
+<./images/timing_read.png, id=208, 515.9275pt x 282.05376pt>
+File: ./images/timing_read.png Graphic file (type png)
+<use ./images/timing_read.png>
+Package pdftex.def Info: ./images/timing_read.png  used on input line 12.
+(pdftex.def)             Requested size: 206.36734pt x 112.81949pt.
+<./images/write_timing.png, id=209, 462.72874pt x 360.34625pt>
+File: ./images/write_timing.png Graphic file (type png)
+<use ./images/write_timing.png>
+Package pdftex.def Info: ./images/write_timing.png  used on input line 17.
+(pdftex.def)             Requested size: 185.08821pt x 144.13594pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+
+ []
+
+<./images/vsim_base_timing.png, id=210, 1615.03375pt x 531.9875pt>
+File: ./images/vsim_base_timing.png Graphic file (type png)
+<use ./images/vsim_base_timing.png>
+Package pdftex.def Info: ./images/vsim_base_timing.png  used on input line 24.
+(pdftex.def)             Requested size: 484.51387pt x 159.59747pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 25.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (57.72252pt too wide) in paragraph at lines 24--25
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+ []
+
+
+Underfull \hbox (badness 1163) in paragraph at lines 27--29
+\T1/lmr/m/n/12 L'écriture et la lec-ture fonc-tionnent cor-rec-te-ment dans cet
+te si-mu-la-tion, les
+ []
+
+[9 <./images/timing_read.png> <./images/write_timing.png> <./images/vsim_base_t
+iming.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+
+ []
+
+<./images/write_strb.png, id=219, 912.40875pt x 167.62625pt>
+File: ./images/write_strb.png Graphic file (type png)
+<use ./images/write_strb.png>
+Package pdftex.def Info: ./images/write_strb.png  used on input line 32.
+(pdftex.def)             Requested size: 456.20326pt x 83.81291pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 33.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (29.41191pt too wide) in paragraph at lines 32--33
+[][] 
+ []
+
+<./images/read_strobe.png, id=220, 707.64375pt x 107.40125pt>
+File: ./images/read_strobe.png Graphic file (type png)
+<use ./images/read_strobe.png>
+Package pdftex.def Info: ./images/read_strobe.png  used on input line 35.
+(pdftex.def)             Requested size: 424.58952pt x 64.44122pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 36.
+See the caption package documentation for explanation.
+
+<./images/signaltap.png, id=221, 1243.64626pt x 316.18124pt>
+File: ./images/signaltap.png Graphic file (type png)
+<use ./images/signaltap.png>
+Package pdftex.def Info: ./images/signaltap.png  used on input line 43.
+(pdftex.def)             Requested size: 472.59048pt x 120.15012pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 44.
+See the caption package documentation for explanation.
+
+
+Overfull \hbox (45.79913pt too wide) in paragraph at lines 42--44
+[] 
+ []
+
+[10 <./images/write_strb.png> <./images/read_strobe.png> <./images/signaltap.pn
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+<./images/testp1.jpeg, id=230, 1284.8pt x 963.6pt>
+File: ./images/testp1.jpeg Graphic file (type jpg)
+<use ./images/testp1.jpeg>
+Package pdftex.def Info: ./images/testp1.jpeg  used on input line 53.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 54.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
+
+ []
+
+<./images/testp2.jpeg, id=231, 1284.8pt x 963.6pt>
+File: ./images/testp2.jpeg Graphic file (type jpg)
+<use ./images/testp2.jpeg>
+Package pdftex.def Info: ./images/testp2.jpeg  used on input line 56.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 57.
+See the caption package documentation for explanation.
+
+[11 <./images/testp1.jpeg>]
+<./images/testp3.jpeg, id=237, 1284.8pt x 963.6pt>
+File: ./images/testp3.jpeg Graphic file (type jpg)
+<use ./images/testp3.jpeg>
+Package pdftex.def Info: ./images/testp3.jpeg  used on input line 61.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 62.
+See the caption package documentation for explanation.
+
+[12 <./images/testp2.jpeg> <./images/testp3.jpeg>]
+<./images/testp4.jpeg, id=243, 1284.8pt x 963.6pt>
+File: ./images/testp4.jpeg Graphic file (type jpg)
+<use ./images/testp4.jpeg>
+Package pdftex.def Info: ./images/testp4.jpeg  used on input line 64.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 65.
+See the caption package documentation for explanation.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+<./images/testp5.jpeg, id=244, 1284.8pt x 963.6pt>
+File: ./images/testp5.jpeg Graphic file (type jpg)
+<use ./images/testp5.jpeg>
+Package pdftex.def Info: ./images/testp5.jpeg  used on input line 68.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 69.
+See the caption package documentation for explanation.
+
+[13 <./images/testp4.jpeg> <./images/testp5.jpeg>]
+<./images/testp6.jpeg, id=252, 1284.8pt x 963.6pt>
+File: ./images/testp6.jpeg Graphic file (type jpg)
+<use ./images/testp6.jpeg>
+Package pdftex.def Info: ./images/testp6.jpeg  used on input line 71.
+(pdftex.def)             Requested size: 385.44298pt x 289.08223pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 72.
+See the caption package documentation for explanation.
+
+) (./chapitres/Conclusion.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-(./Rapport_SOCF_LABO5_latex.lof)
+(./Rapport_SOCF_LABO5_latex.lof [14 <./images/testp6.jpeg>])
 \tf@lof=\write5
 \openout5 = `Rapport_SOCF_LABO5_latex.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
- [13 <./images/appuiKey2.jpeg>] [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
 
 (./Rapport_SOCF_LABO5_latex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `Rapport_SOCF_LABO5_latex.out' has not change
 d.
-(rerunfilecheck)             Checksum: A9E915B1A1EB3B4BA0094BBB16D5C82D;1118.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
+(rerunfilecheck)             Checksum: BFF2F5530296230BD5B1CBFFE5FF2F10;1291.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 13725 strings out of 494821
- 200200 string characters out of 6177891
- 403498 words of memory out of 5000000
- 16602 multiletter control sequences out of 15000+600000
- 52824 words of font info for 44 fonts, out of 8000000 for 9000
+ 13429 strings out of 494821
+ 195997 string characters out of 6177891
+ 357933 words of memory out of 5000000
+ 16404 multiletter control sequences out of 15000+600000
+ 49788 words of font info for 41 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 42i,12n,51p,838b,2094s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,43p,819b,2096s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
 fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/publi
 c/lm/lmro12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Rapport_SOCF_LABO5_latex.pdf (14 pages, 1056036 bytes).
+fb>
+Output written on Rapport_SOCF_LABO5_latex.pdf (15 pages, 1628240 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
- 180 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 327 PDF objects out of 1000 (max. 8388607)
+ 278 compressed objects within 3 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

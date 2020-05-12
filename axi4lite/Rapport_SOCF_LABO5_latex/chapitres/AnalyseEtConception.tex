@@ -1,15 +1,65 @@
 \section{Analyse}
 
 \subsection{Partie 1}
-Cette partie nous demandait dans un premier temps d'établir un plan d'addressage en incluant certains registres spécifiques, soit un registre contenant une constante à l'adresse 0x000 et un registre de test pouvant être écrit et lu à l'adresse 0x004. La taille du bit d'adresse étant de 12 bits, nous avions un espace de 4 Ko à notre disposition pour l'addressage. J'ai choisit d'utiliser un adressage 
-\subsection{Partie 2}
-Cette partie nous demandais d'ajouter la gestion des leds et des afficheurs 7 segments en fonction des switchs et sans gérer pour le moment les interruptions (Key2 et Key3). Ce qui est intéressant dans cette partie, c'est l'ajout des Keys et des afficheurs 7 segments en tant que PIO, en se servant de l'expérience reçu lors de la réalisation de la première partie.
+Cette partie nous demandait dans un premier temps d'établir un plan d'adressage en incluant certains registres spécifiques, soit un registre contenant une constante à l'adresse 0x000 et un registre de test pouvant être écrit et lu à l'adresse 0x004. La taille du bus d'adresse étant de 12 bits, nous avions un espace de 4 Ko à notre disposition pour l'adressage. Le plan d'adressage final est disponible à la fin de la partie analyse. Je précise ici que quand je note un champ de bits comme "reserved", cela indique que ces champs de bits sont réservés pour des utilisations futures, et que l'écriture sur ces bits précis n'aura pas d'impact, et ces bits seront toujours considérés comme ayant la valeur '0'.\\
 
+Concernant la réflexion sur l'implémentation du bus axi lite, je me suis basé sur le document qui était fourni avec ce laboratoire, "Designing a AXI4-lite Slave Peripheral, Griffin, Xilinx". J'ai identifié deux points importants dès le début de l'analyse : \\
+\begin{itemize}
+	\item l'"Assert and wait" rule est un point important à respecter dans l'implémentation du bus, et doit être gardée à l'esprit lors de l'écriture des différents process de l'IP
+	\item Les timings de chaque canal doivent être respecté, faute de quoi le bus ne fonctionnera pas. Je me suis rendu compte par la suite que si c'était particulièrement vrai pour les timings concernant les canaux de lecture, certains timings pouvaient être décalés sans poser de problèmes dans le cadre des canaux d'écriture (Je pense au canal de réponse de l'écriture, dans mon cas)\\
+\end{itemize}
+En gardant ces deux points à l'esprit, j'ai pu commencer le laboratoire. J'ai d'abord fonctionné en utilisant vsim et le test-bench fournit afin de pouvoir contrôler les timings et les résultats stockés ou lus du bus axi lite.
+\subsection{Partie 2}
+Nous devions ajouter une gestion des interruptions dans cette partie.J'ai commencé par regarder le laboratoire précédent pour voir quels registres devaient être implémenté en plus. Suite à cela, le plan d'adressage a reçu deux nouvelles entrées, concernant le registre keys\_IM pour interruption mask et keys\_EC pour edge capture. Ces deux registres servent le but suivant :\\ 
+\begin{itemize}
+	\item Le registre d'interruption mask permet de définir quels keys génèrent une interruption lorsqu'on les pressent. les bits 3 à 0 correspondent aux keys 3 à 0 et la présence d'un bit actif dans l'une de ces positions signifie que le key correspondant génère une interruption lors de son appui.\\
+	\item Le registre d'edge capture permet de savoir quel key a été appuyé lorsqu'une interruption a lieu. L'accès en écriture à ce registre remplit le registre de bit '0' et clean l'interruption qui a été générée. \\ 
+\end{itemize}
+Ces deux registres seront utilisés dans le code VHDL de l'IP axi lite afin de pouvoir levé une exception. Une chose intéressante à garder en tête c'est que ces registres ne sont pas juste des registres permettant de gérer des I/O ou des registres n'ayant comme fonction que d'être lus ou écrit. Le contenu du registre IM sera utilisé dans la logique VHDL pour déclencher une irq et le registre EC sera peuplé dans la logique VHDL en fonction des Keys appuyés.
 
 \subsection{Adress Map finale}
+\begin{center}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Offset} & \textbf{Read}  & \textbf{Write} \\
+		& D31...0 & D31...0 \\
+		\hline
+		\hline 
+		0x000 & [31...0] const ( OxDEADBEEF ) & not used  \\
+		\hline
+		0x004 & [31...0] reg\_test\_rw & [31...0] reg\_test\_rw  \\
+		\hline
+		0x008 & [31...10] '0...0' & [31...10] reserved  \\
+		& [9...0] Leds9...0 & [9...0] Leds9...0  \\
+		\hline
+		0x00C & [31] '0' & [31] reserved  \\
+		& [30...24] Hex3   &  [30...24] Hex3 \\
+		& [23] '0' & [23] reserved \\
+		& [22...16] Hex2   &  [22...16] Hex2 \\
+		& [15] '0' & [15] reserved \\
+		& [14...8] Hex1   &  [14...8] Hex1 \\
+		& [7] '0' & [7] reserved \\
+		& [6...0] Hex0   &  [6...0] Hex0 \\
+		\hline
+		0x010 & [31...15] '0' & [31...15] reserved \\
+		& [14...8] Hex5   &  [14...8] Hex5 \\
+		& [7] '0' & [7] reserved \\
+		& [6...0] Hex4   &  [6...0] Hex4 \\
+		\hline 
+		0x014 & [31...10] '0...0' & not used  \\
+		& [9...0] Switchs9...0 &   \\
+		\hline 
+		0x018 & [31...4] '0...0' & not used  \\
+		& [3...0] Keys3...0 &   \\
+		\hline 
+		0x01C & [31...4] '0...0' & [31...4] reserved \\
+		& [3...0] Keys\_IM3...0 &   [3...0] Keys\_IM3...0 \\
+		\hline 
+		0x020 & [31...4] '0...0' & [31...4] reserved  \\
+		& [3...0] Keys\_EC3...0 &   [3...0] Keys\_EC3..0\\
+		\hline
+	\end{tabular}
+\end{center}
 
-\includegraphics[scale=0.6]{./images/address_map.png}
-\captionof{figure}{Laboratoire 2 : Address map}
 \par
-Le choix des offsets ci-dessus vient à la base d'un problème de compréhension. J'avais choisi ces offsets en fonction des adresses correspondantes dans le memory layout fournit dans le document "DE1-SoC\_Computer\_ARM.pdf". Si cela n'apporte pas de problème en tant que tel, il faut tout de même noter que j'aurais pu en choisir d'autres, en faisant en sorte qu'ils soient contiguës par exemple.
-
+J'ai essayé d'avoir un plan d'adressage le plus compact possible. Dans le plan de base, j'avais prévu de mettre le registre gérant les keys à la fin afin d'avoir une certaine logique dans l'adressage des registres permettant la gestion des interruptions par la suite. L'adresse de base à laquelle les offsets viennent s'ajouter est décidée dans QSys, et l'on peut raisonnablement prédire qu'elle sera la même que celle du laboratoire 2, soit l'adresse du bus h2f\_lw, 0xFF200000.
