@@ -89,10 +89,10 @@ architecture Behavioral of axi4lite_slave_tb is
     --REM: table fixe pour 32 bits de data 
         (
             ( 4, x"00001023", "1111"),   --ecriture adresse 0x04
-            ( 8, x"10004321", "1111"),   --ecriture adresse 0x08
-            (12, x"2000a5a5", "1111"),   --ecriture adresse 0x0C 
-            (16, x"3000ffff", "1111"),   --ecriture adresse 0x10 
-            ( 4, x"AA240000", "1111")   --ecriture adresse 0x04
+            ( 8, x"10004321", "0011"),   --ecriture adresse 0x08
+            (12, x"2000a5a5", "1010"),   --ecriture adresse 0x0C 
+            (16, x"3000ffff", "0001"),   --ecriture adresse 0x10 
+            ( 4, x"AA240000", "1100")   --ecriture adresse 0x04
         );
     
     constant TAB_STI_AXI_READ : Type_Tab_Stimuli_AXI_READ :=

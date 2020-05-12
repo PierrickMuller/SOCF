@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/script
 Eaxi4lite_slave
-Z1 w1589187262
+Z1 w1589271606
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -18,13 +18,13 @@ Z5 8../src/axi4lite_slave.vhd
 Z6 F../src/axi4lite_slave.vhd
 l0
 L20
-VlU9g[^AU9f3QR`Zm5mj1L3
-!s100 <Vk<Ti3[kHDVii=8?QDA13
+V:B03gSI=jK4ZG4Q2n=fK:0
+!s100 9F^k?66?K`CcZ;kZ96b5S2
 Z7 OL;C;10.5c_2;63
 32
-Z8 !s110 1589187295
+Z8 !s110 1589272857
 !i10b 1
-Z9 !s108 1589187295.000000
+Z9 !s108 1589272857.000000
 Z10 !s90 -reportprogress|300|-work|work|../src/axi4lite_slave.vhd|
 Z11 !s107 ../src/axi4lite_slave.vhd|
 !i113 0
@@ -34,14 +34,14 @@ Artl
 R2
 R3
 R4
-Z14 DEx4 work 14 axi4lite_slave 0 22 lU9g[^AU9f3QR`Zm5mj1L3
-l156
-L82
-VfNF<GR^6GNOIQ83@KGM831
-!s100 Wk<@aSLA7AkVz0O0?0>C73
-R7
+Z14 DEx4 work 14 axi4lite_slave 0 22 :B03gSI=jK4ZG4Q2n=fK:0
 32
 R8
+l156
+L82
+VXfK>zJAbK9O@A9z0j??z<3
+!s100 3DeaRGA6HhGnahm69hWCI1
+R7
 !i10b 1
 R9
 R10
@@ -50,7 +50,7 @@ R11
 R12
 R13
 Eaxi4lite_slave_tb
-Z15 w1587718012
+Z15 w1589272850
 R14
 R2
 R3
@@ -68,27 +68,27 @@ R8
 !i10b 1
 R9
 Z18 !s90 -reportprogress|300|-work|work|../src_tb/axi4lite_slave_tb.vhd|
-!s107 ../src_tb/axi4lite_slave_tb.vhd|
+Z19 !s107 ../src_tb/axi4lite_slave_tb.vhd|
 !i113 0
 R12
 R13
 Abehavioral
-DEx4 work 14 axi4lite_slave 0 22 WhoonbdUS@C>L^><YLb_D0
+R14
 R2
 R3
 R4
 DEx4 work 17 axi4lite_slave_tb 0 22 TYiP^Q<87Pc6cHWP9b4CJ0
 32
-!s110 1588338311
+R8
 l110
 L33
-V[cUdQHe:YmV^hJM3]hT7O2
-!s100 O7kkdcSe6be[I1W8`:7LU3
+VaMzYSNMS91T_m?c=GI@[Y2
+!s100 >YPP2lS:MFPRLbQiSHVdR1
 R7
 !i10b 1
-!s108 1588338310.000000
+R9
 R18
-!s107 ../src_tb/axi4lite_slave_tb.vhd|
+R19
 !i113 0
 R12
 R13
