@@ -55,7 +55,10 @@ int main(void){
     int value;
     unsigned int const_value;
     
-    // PROCESSUS D'ACTIVATION DES INTERUPTIONS 
+    // PROCESSUS D'ACTIVATION DES INTERUPTIONS et de setup
+    
+    //On set la gpio led en mode sortie.
+    GPIO1_SWPORTA_DDR |= MASK_GPIO53_LED;
     
     //On réinitialise à 0 les valeurs des leds et des afficheurs 7 segments
     LEDS = 0x0;
@@ -103,8 +106,11 @@ int main(void){
         LEDS = 0x3FF;
     }
   
-  
-  
+    while(!(GPIO1_EXT_PORTA & MASK_GPIO54_KEY))
+    {
+        
+    }
+    LEDS = 0xAA;
   
     while(1)
     {

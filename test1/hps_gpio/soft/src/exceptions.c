@@ -31,10 +31,10 @@
 
 // Define the IRQ exception handler
 void __attribute__ ((interrupt)) __cs3_isr_irq(void)
-{/*
+{
   // On lit le registre de l'interface CPU pour savoir quel périphérique a causé l'interruption 
   int interrupt_ID = ICCIAR;
-  int hex_val, press;
+  int hex20_val,hex53_val,, press;
 
   press = KEYS_INTERRUPT_REGISTER;     // On récupère le bouton qui à causer l'interruption
   KEYS_INTERRUPT_REGISTER = press;     // On nettoie l'interruption dans le registre des interruptions pour les KEYS
@@ -42,28 +42,50 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
   // Si l'interruption à été causer par un bouton
   if(interrupt_ID == 72)
   {
+    if(press & 0x1) // KEY0 
+    {
+        //Etat des switchs sur leds 
+        LEDS = SWITCHS;
+    }
+    if(press & 0x2) // KEY1 
+    {
+        //rotation droite en fonction de l'état de switch0 
+      hex20_val = HEX2_0;
+      hex53_val = HEX5_3;
+      HEX2_0 = ~0x0;
+      HEX5_3 = ~0x0;
+      HEX2_0 = (0x0 | ((hex54_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
+      HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex54_val & (0x7F << 16)) >> 8) | ((hex54_val & (0x7F << 8))>>8));
+      if(SWITCHS & 0x1)
+      {
+        hex20_val = HEX2_0;
+        hex53_val = HEX5_3;
+        HEX2_0 = ~0x0;
+        HEX5_3 = ~0x0;
+        HEX2_0 = (0x0 | ((hex54_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
+        HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex54_val & (0x7F << 16)) >> 8) | ((hex54_val & (0x7F << 8))>>8));
+      }
+        
+    }
     if (press & 0x4)       // KEY2
     {
-	  // On deplace les leds vers la droite ainsi que les valeurs des afficheurs 7 segments
-      LEDS = (LEDS >> 1) | ((LEDS & (0x1 ))<<9);
-      hex_val = HEX3_0;
-      HEX3_0 = ~0x0;
-      HEX3_0 = (0x0 | ((hex_val & (0x7F)) << 24) | ((hex_val & (0x7F << 24)) >> 8) | ((hex_val & (0x7F << 16)) >> 8) | ((hex_val & (0x7F << 8))>>8));
+        // rotation gauche de 1 
+	  hex20_val = HEX2_0;
+      hex53_val = HEX5_3;
+      HEX2_0 = ~0x0;
+      HEX5_3 = ~0x0;
+      HEX2_0 = (0x0 | ((hex20_val & (0x7F << 8)) << 8) | ((hex20_val & (0x7F)) << 8) | ((hex54_val & (0x7F << 16)) >> 16));
+      HEX5_3 = (0x0 | ((hex54_val & (0x7F << 8)) << 8) | ((hex54_val & (0x7F)) << 8) | ((hex20_val & (0x7F << 16)) >> 16));
     }
-
-    else if (press & 0x8)	// KEY3
+    if (press & 0x8)	// KEY3
     {
-	  // On deplace les leds vers la gauche ainsi que les valeurs des afficheurs 7 segments
-      LEDS = (LEDS << 1) | ((LEDS & (0x1 << 9))>>9);
-      hex_val = HEX3_0;
-      HEX3_0 = ~0x0;
-      HEX3_0 = (0x0 | ((hex_val & (0x7F << 16)) << 8) | ((hex_val & (0x7F << 8)) << 8) | ((hex_val & (0x7F )) << 8) | ((hex_val & (0x7F << 24))>>24));
+	  GPIO1_SWPORTA_DR = ~(GPIO1_SWPORTA_DR & MASK_GPIO53_LED);
     }
 
   }
   
 	// On nettoie l'interruption dans le registre de interruptions pour le processeur
-	ICCEOIR = interrupt_ID;*/
+	ICCEOIR = interrupt_ID;
 	return;
 }
 

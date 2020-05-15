@@ -205,11 +205,6 @@ architecture top of DE1_SoC_top is
             clk_clk                               : in    std_logic                     := 'X';             -- clk
             hps_io_0_hps_io_gpio_inst_GPIO53      : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO53
             hps_io_0_hps_io_gpio_inst_GPIO54      : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
-            pio_hex543_external_connection_export : out   std_logic_vector(31 downto 0);                    -- export
-            pio_key_external_connection_export    : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
-            pio_leds_external_connection_export   : out   std_logic_vector(9 downto 0);                     -- export
-            pio_switch_external_connection_export : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
-            pio_hex210_external_connection_export : out   std_logic_vector(31 downto 0);                    -- export
             memory_mem_a                          : out   std_logic_vector(14 downto 0);                    -- mem_a
             memory_mem_ba                         : out   std_logic_vector(2 downto 0);                     -- mem_ba
             memory_mem_ck                         : out   std_logic;                                        -- mem_ck
@@ -225,7 +220,13 @@ architecture top of DE1_SoC_top is
             memory_mem_dqs_n                      : inout std_logic_vector(3 downto 0)  := (others => 'X'); -- mem_dqs_n
             memory_mem_odt                        : out   std_logic;                                        -- mem_odt
             memory_mem_dm                         : out   std_logic_vector(3 downto 0);                     -- mem_dm
-            memory_oct_rzqin                      : in    std_logic                     := 'X'              -- oct_rzqin
+            memory_oct_rzqin                      : in    std_logic                     := 'X';             -- oct_rzqin
+            pio_const_external_connection_export  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
+            pio_hex210_external_connection_export : out   std_logic_vector(31 downto 0);                    -- export
+            pio_hex543_external_connection_export : out   std_logic_vector(31 downto 0);                    -- export
+            pio_key_external_connection_export    : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+            pio_leds_external_connection_export   : out   std_logic_vector(9 downto 0);                     -- export
+            pio_switch_external_connection_export : in    std_logic_vector(9 downto 0)  := (others => 'X')  -- export
         );
     end component qsys_system;
 
@@ -256,11 +257,7 @@ begin
         hps_io_0_hps_io_gpio_inst_GPIO53      => HPS_LED_io,      --                       hps_io_0.hps_io_gpio_inst_GPIO53
         hps_io_0_hps_io_gpio_inst_GPIO54      => HPS_KEY_io,      --                               .hps_io_gpio_inst_GPIO54
         
-        pio_hex543_external_connection_export => temp_hex543_s, -- pio_hex543_external_connection.export
-        pio_key_external_connection_export    => KEY_i,    --    pio_key_external_connection.export
-        pio_leds_external_connection_export   => LEDR_o,   --   pio_leds_external_connection.export
-        pio_switch_external_connection_export => SW_i, -- pio_switch_external_connection.export
-        pio_hex210_external_connection_export => temp_hex210_s, -- pio_hex210_external_connection.export
+        
         memory_mem_a        => HPS_DDR3_ADDR_o,
         memory_mem_ba       => HPS_DDR3_BA_o,
         memory_mem_ck       => HPS_DDR3_CK_P_o,
@@ -276,7 +273,13 @@ begin
         memory_mem_dqs_n    => HPS_DDR3_DQS_N_io,
         memory_mem_odt      => HPS_DDR3_ODT_o,
         memory_mem_dm       => HPS_DDR3_DM_o,
-        memory_oct_rzqin    => HPS_DDR3_RZQ_i
+        memory_oct_rzqin    => HPS_DDR3_RZQ_i,
+        pio_const_external_connection_export  => x"CAFE1234",  --  pio_const_external_connection.export
+        pio_hex210_external_connection_export => temp_hex210_s, -- pio_hex210_external_connection.export
+        pio_hex543_external_connection_export => temp_hex543_s, -- pio_hex543_external_connection.export
+        pio_key_external_connection_export    => KEY_i,    --    pio_key_external_connection.export
+        pio_leds_external_connection_export   => LEDR_o,   --   pio_leds_external_connection.export
+        pio_switch_external_connection_export => SW_i  -- pio_switch_external_connection.export
     );
 
     HEX0_o <= temp_hex210_s(6 downto 0);
