@@ -34,7 +34,7 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 {
   // On lit le registre de l'interface CPU pour savoir quel périphérique a causé l'interruption 
   int interrupt_ID = ICCIAR;
-  int hex20_val,hex53_val,, press;
+  int hex20_val,hex53_val, press;
 
   press = KEYS_INTERRUPT_REGISTER;     // On récupère le bouton qui à causer l'interruption
   KEYS_INTERRUPT_REGISTER = press;     // On nettoie l'interruption dans le registre des interruptions pour les KEYS
@@ -54,16 +54,16 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
       hex53_val = HEX5_3;
       HEX2_0 = ~0x0;
       HEX5_3 = ~0x0;
-      HEX2_0 = (0x0 | ((hex54_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
-      HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex54_val & (0x7F << 16)) >> 8) | ((hex54_val & (0x7F << 8))>>8));
+      HEX2_0 = (0x0 | ((hex53_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
+      HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex53_val & (0x7F << 16)) >> 8) | ((hex53_val & (0x7F << 8))>>8));
       if(SWITCHS & 0x1)
       {
         hex20_val = HEX2_0;
         hex53_val = HEX5_3;
         HEX2_0 = ~0x0;
         HEX5_3 = ~0x0;
-        HEX2_0 = (0x0 | ((hex54_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
-        HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex54_val & (0x7F << 16)) >> 8) | ((hex54_val & (0x7F << 8))>>8));
+        HEX2_0 = (0x0 | ((hex53_val & (0x7F)) << 16) | ((hex20_val & (0x7F << 16)) >> 8) | ((hex20_val & (0x7F << 8))>>8));
+        HEX5_3 = (0x0 | ((hex20_val & (0x7F)) << 16) | ((hex53_val & (0x7F << 16)) >> 8) | ((hex53_val & (0x7F << 8))>>8));
       }
         
     }
@@ -74,8 +74,8 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
       hex53_val = HEX5_3;
       HEX2_0 = ~0x0;
       HEX5_3 = ~0x0;
-      HEX2_0 = (0x0 | ((hex20_val & (0x7F << 8)) << 8) | ((hex20_val & (0x7F)) << 8) | ((hex54_val & (0x7F << 16)) >> 16));
-      HEX5_3 = (0x0 | ((hex54_val & (0x7F << 8)) << 8) | ((hex54_val & (0x7F)) << 8) | ((hex20_val & (0x7F << 16)) >> 16));
+      HEX2_0 = (0x0 | ((hex20_val & (0x7F << 8)) << 8) | ((hex20_val & (0x7F)) << 8) | ((hex53_val & (0x7F << 16)) >> 16));
+      HEX5_3 = (0x0 | ((hex53_val & (0x7F << 8)) << 8) | ((hex53_val & (0x7F)) << 8) | ((hex20_val & (0x7F << 16)) >> 16));
     }
     if (press & 0x8)	// KEY3
     {

@@ -55,7 +55,6 @@ int main(void){
     int value;
     unsigned int const_value;
     
-    // PROCESSUS D'ACTIVATION DES INTERUPTIONS et de setup
     
     //On set la gpio led en mode sortie.
     GPIO1_SWPORTA_DDR |= MASK_GPIO53_LED;
@@ -64,6 +63,32 @@ int main(void){
     LEDS = 0x0;
     HEX2_0 = ~0x0;
     HEX5_3 = ~0x0;
+    
+    //PARTIE LANCEMENT DU PROGRAMME 
+    //Preuve que le registre est en read only
+    CONST_REGISTER = 0x11111111;
+    const_value = CONST_REGISTER;
+    // On effectue les manipulations demandées pour l'afficheur 7 au lancement du programme 
+    HEX2_0 = ~(0x0 | (temp[(const_value & 0xF00) >> 8] << 16) | (temp[(const_value & 0xF0) >> 4 ] << 8) | (temp[(const_value & 0xF)]));
+    HEX5_3 = ~(0x0 | (temp[(const_value & 0xF00000) >> 20] << 16) | (temp[(const_value & 0xF0000) >> 16] << 8) | temp[(const_value & 0xF000) >> 12] );
+    
+    // Ecriture et lecture du test register avec allumage des leds en cas d'erreur
+    TEST_REGISTER = CONST_REGISTER;
+    if(TEST_REGISTER != CONST_REGISTER)
+    {
+        LEDS = 0x3FF;
+    }
+  
+    // On attend l'appui du user bouton
+    while((GPIO1_EXT_PORTA & MASK_GPIO54_KEY))
+    {
+        
+    }
+
+    // PROCESSUS D'ACTIVATION DES INTERUPTIONS et de setup uniquement une fois le bouton appuyé
+    // J'ai penser qu'en mettant ceci ici, cela me permettrait d'éviter que l'appui sur les boutons ait un effet.
+    // Mais le problème, c'est que si j'appuie sur les key avant le user bouton, une fois le user bouton appuyé, le programme effectue
+    // Les appuis fait avant. Je n'ai pas réussi à résoudre ce problème malheureusement
     
     // Initialize the banked stack pointer register for IRQ mode
     set_A9_IRQ_stack();
@@ -85,33 +110,15 @@ int main(void){
     //On renseigne que notre interruption doit être envoyée à l'interface CPU 0
     ICDIPTR = 1;
     
-
-    // On active les interruptions pour tous les boutons
+    // On active les interruptions pour tous les boutons 
     KEYS_INTERRUPT_ENABLE = 0xF;
+
     
     // On active les interruptions sur le processeur
     enable_A9_interrupts();
+    
 
-    
-    //PARTIE LANCEMENT DU PROGRAMME 
-    CONST_REGISTER = 0x11111111;
-    const_value = CONST_REGISTER;
-    // On effectue les manipulations demandées pour l'afficheur 7 au lancement du programme 
-    HEX2_0 = ~(0x0 | (temp[(const_value & 0xF00) >> 8] << 16) | (temp[(const_value & 0xF0) >> 4 ] << 8) | (temp[(const_value & 0xF)]));
-    HEX5_3 = ~(0x0 | (temp[(const_value & 0xF00000) >> 20] << 16) | (temp[(const_value & 0xF0000) >> 16] << 8) | temp[(const_value & 0xF000) >> 12] );
-    
-    TEST_REGISTER = CONST_REGISTER;
-    if(TEST_REGISTER != CONST_REGISTER)
-    {
-        LEDS = 0x3FF;
-    }
-  
-    while(!(GPIO1_EXT_PORTA & MASK_GPIO54_KEY))
-    {
-        
-    }
-    LEDS = 0xAA;
-  
+    //Permet de ne pas terminer le prgramme 
     while(1)
     {
 	  

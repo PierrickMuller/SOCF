@@ -274,7 +274,7 @@ begin
         memory_mem_odt      => HPS_DDR3_ODT_o,
         memory_mem_dm       => HPS_DDR3_DM_o,
         memory_oct_rzqin    => HPS_DDR3_RZQ_i,
-        pio_const_external_connection_export  => x"CAFE1234",  --  pio_const_external_connection.export
+        pio_const_external_connection_export  => x"CAFE1234",  --  PERMET DE SET LA CONSTANTE ET DE l'AVOIR EN READ ONLY
         pio_hex210_external_connection_export => temp_hex210_s, -- pio_hex210_external_connection.export
         pio_hex543_external_connection_export => temp_hex543_s, -- pio_hex543_external_connection.export
         pio_key_external_connection_export    => KEY_i,    --    pio_key_external_connection.export
@@ -282,6 +282,7 @@ begin
         pio_switch_external_connection_export => SW_i  -- pio_switch_external_connection.export
     );
 
+    -- ASSIGNATION DES HEX
     HEX0_o <= temp_hex210_s(6 downto 0);
     HEX1_o <= temp_hex210_s(14 downto 8);
     HEX2_o <= temp_hex210_s(22 downto 16);
