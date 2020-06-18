@@ -1,0 +1,17 @@
+<internal_error>
+<sub_system>ERR</sub_system>
+<callstack>
+	0x7fc4ec347171: ccl_err + 0x8171 (_ZN15ERR_STACKWALKER15get_stack_traceEPPKviiPv + 0xb1)
+	0x7fc4ec34a015: ccl_err + 0xb015 (_Z14err_terminatorv + 0x4b)
+	0x7fc4e3d19796: stdc++.so.6 + 0x63796 (_ZN10__cxxabiv111__terminateEPFvvE + 0x6)
+	0x7fc4e3d197c3: stdc++.so.6 + 0x637c3
+	0x7fc4e3d199ee: stdc++.so.6 + 0x639ee
+	0x7fc4ec349ee2: ccl_err + 0xaee2 (err_sigaction_handler + 0x77)
+	0x7fc4e43d7890: pthread.so.0 + 0x12890
+	0x7fc47b932b00:
+</callstack>
+<error>*** Fatal Error: Unhandled Exception</error>
+<date>Thu Jun 18 10:45:16 2020
+</date>
+<version>Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition</version>
+</internal_error>

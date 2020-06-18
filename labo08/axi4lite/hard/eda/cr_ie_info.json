@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "linux64",
+		"os_name" : "Linux Mint",
+		"os_version" : "19"
+	},
+	"error" : {
+		"executable" : "quartus_map",
+		"comment" : "not_applicable",
+		"error_message" : "temp_cap_inst",
+		"source_file" : "/quartus/synth/qsyn/qsyn_cmd.cpp",
+		"line" : "3305",
+		"stack_trace" : "\t   0x440222: quartus_map + 0x40222 (_ZN14QSYN_FRAMEWORK19write_qic_databasesEb + 0xa92)\n\t   0x44087c: quartus_map + 0x4087c (_ZN14QSYN_FRAMEWORK15write_databasesEb + 0xcc)\n\t0x7fec2980b79e: comp_qexe + 0x1c79e (_Z18qexe_standard_mainP14QEXE_FRAMEWORKPPK22QEXE_OPTION_DEFINITIONiPPKc + 0x8cb)\n\t   0x43025c: quartus_map + 0x3025c (_Z9qsyn_mainiPPKc + 0x13c)\n\t0x7fec0803a720: ccl_msg + 0x40720 (_Z15msg_main_threadPv + 0x10)\n\t0x7fec0539202c: ccl_thr + 0x602c (thr_final_wrapper + 0xc)\n\t0x7fec0803a7df: ccl_msg + 0x407df (_Z18msg_thread_wrapperPFPvS_ES_ + 0x62)\n\t0x7fec05a03559: ccl_mem + 0xa559 (_Z18mem_thread_wrapperPFPvS_ES_ + 0x99)\n\t0x7fec057d0f92: ccl_err + 0x8f92 (_Z18err_thread_wrapperPFPvS_ES_ + 0x27)\n\t0x7fec053923f2: ccl_thr + 0x63f2 (thr_thread_wrapper + 0x15)\n\t0x7fec0803c7e2: ccl_msg + 0x427e2 (_Z12msg_exe_mainiPPKcPFiiS1_E + 0xa3)\n\t0x7febffea7b97: c.so.6 + 0x21b97 (__libc_start_main + 0xe7)\n\t   0x415545: quartus_map + 0x15545\n",
+		"subsystem" : "QSYN"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "17.0.0",
+		"build" : "595",
+		"edition" : "Standard Edition"
+	}
+}

@@ -1,0 +1,2075 @@
+# //  Questa Sim-64
+# //  Version 10.5c_2 linux_x86_64 Oct 17 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+ls
+# axi4lite_slave.vhd
+# transcript
+compile axi4lite_slave.vhd
+# wrong # args: should be "compile w cmd ..."
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:37:50 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(81): near "<=": (vcom-1576) expecting ':'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(82): near "<=": (vcom-1576) expecting ':'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(105): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(105): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(106): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(106): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(128): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(129): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(130): Integer literal 1 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(131): Integer literal 2 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(132): Integer literal 3 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(133): Integer literal 4 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(134): Integer literal 5 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(135): Integer literal 6 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(139): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(140): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(141): Integer literal 1 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(142): Integer literal 2 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(143): Integer literal 3 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(144): Integer literal 4 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(145): Integer literal 5 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(146): Integer literal 6 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(183): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:37:50 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 41, Warnings: 0
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:40:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(183): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:40:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:41:25 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:41:25 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:41:57 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:41:57 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:21 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:42:21 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:35 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:42:35 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:41 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(211): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(211): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1339) Case statement choices cover only 1 out of 2147483648 cases.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(266): VHDL Compiler exiting
+# End time: 11:42:41 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:16:17 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:16:17 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+compile axi4lite_slave.vhd
+# wrong # args: should be "compile w cmd ..."
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:16:22 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:16:22 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:25:30 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:25:30 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:25:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(154): near "process": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(159): near "elsif": (vcom-1576) expecting END.
+# End time: 13:25:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:15:48 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(191): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(191): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(195): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(203): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(244): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(287): VHDL Compiler exiting
+# End time: 14:15:48 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:16:12 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(195): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(203): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(244): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(287): VHDL Compiler exiting
+# End time: 14:16:12 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 18, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:17:12 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(196): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(198): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:17:12 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:17:26 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:17:26 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:18:14 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "and" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:18:15 on Apr 13,2020, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:18:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "and" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:18:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:05 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): near "&": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:05 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:08 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1581) No feasible entries for infix operator '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:08 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:31 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:31 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:53 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(247): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(250): near "process": (vcom-1576) expecting IF.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(262): Illegal sequential statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): near "rtl": (vcom-1576) expecting PROCESS.
+# End time: 14:19:53 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:04 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(250): near "process": (vcom-1576) expecting IF.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(262): Illegal sequential statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): near "rtl": (vcom-1576) expecting PROCESS.
+# End time: 14:20:04 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:24 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:20:24 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:27 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:20:27 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+cat transcript
+# //  Questa Sim-64
+# //  Version 10.5c_2 linux_x86_64 Oct 17 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ls
+# axi4lite_slave.vhd
+# transcript
+# compile axi4lite_slave.vhd
+# wrong # args: should be "compile w cmd ..."
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:37:50 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(81): near "<=": (vcom-1576) expecting ':'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(82): near "<=": (vcom-1576) expecting ':'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(105): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(105): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(106): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(106): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(108): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(128): (vcom-1136) Unknown identifier "local_address_write_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(129): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(130): Integer literal 1 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(131): Integer literal 2 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(132): Integer literal 3 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(133): Integer literal 4 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(134): Integer literal 5 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(135): Integer literal 6 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(139): (vcom-1136) Unknown identifier "local_address_read_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(140): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(141): Integer literal 1 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(142): Integer literal 2 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(143): Integer literal 3 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(144): Integer literal 4 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(145): Integer literal 5 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(146): Integer literal 6 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(183): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:37:50 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 41, Warnings: 0
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:40:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(178): Expression is not a signal.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(183): (vcom-1136) Unknown identifier "clk_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:40:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 15, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:41:25 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:41:25 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:41:57 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:41:57 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:21 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:42:21 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:35 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 11:42:35 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 11:42:41 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(211): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(211): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1339) Case statement choices cover only 1 out of 2147483648 cases.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(266): VHDL Compiler exiting
+# End time: 11:42:41 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:16:17 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:16:17 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# compile axi4lite_slave.vhd
+# wrong # args: should be "compile w cmd ..."
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:16:22 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:16:22 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:25:30 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(181): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(182): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(193): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(200): near "process": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): (vcom-1136) Unknown identifier "int_waddr_v".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(213): Illegal concurrent statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): Integer literal 0 is not of type (error).
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(214): near ".": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(224): near "if": (vcom-1576) expecting ';'.
+# End time: 13:25:30 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 13:25:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(154): near "process": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(159): near "elsif": (vcom-1576) expecting END.
+# End time: 13:25:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:15:48 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(191): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(191): (vcom-1136) Unknown identifier "axi_waddr_done_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(195): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(203): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(244): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(287): VHDL Compiler exiting
+# End time: 14:15:48 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:16:12 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(192): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(194): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(195): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(197): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(203): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_wready_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): ** Error: (vcom-1590) Bad expression in left operand of infix expression 'and'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(207): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(217): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(221): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(244): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(287): VHDL Compiler exiting
+# End time: 14:16:12 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 18, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:17:12 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(196): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(198): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:17:12 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:17:26 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): Illegal target for signal assignment.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(218): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): (vcom-1136) Unknown identifier "axi_data_wren_s".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(222): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:17:26 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:18:14 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "and" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:18:15 on Apr 13,2020, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:18:42 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "and" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:18:42 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:05 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): near "&": syntax error
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:05 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:08 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): (vcom-1581) No feasible entries for infix operator '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(208): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:08 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:31 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(245): near "elsif": (vcom-1576) expecting ';'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): VHDL Compiler exiting
+# End time: 14:19:31 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:19:53 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(247): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(250): near "process": (vcom-1576) expecting IF.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(262): Illegal sequential statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): near "rtl": (vcom-1576) expecting PROCESS.
+# End time: 14:19:53 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:04 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(250): near "process": (vcom-1576) expecting IF.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(262): Illegal sequential statement.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd(288): near "rtl": (vcom-1576) expecting PROCESS.
+# End time: 14:20:04 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:24 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:20:24 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:20:27 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:20:27 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ls
+# axi4lite_slave.vhd
+# transcript
+# work
+# cat transcript
+# 
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+cd ..
+ls
+# README.txt
+# src
+# tb
+cd tb
+ls
+# axi4lite_slave_tb.vhd
+cd ..
+ls
+# README.txt
+# src
+# tb
+cat README.txt
+# AXI4-lite slave interface
+# 
+# This IP is an AXI4-lite slave interface with internal registers.
+# 
+# To use the IP in Qsys, create a new component and map as follows:
+#     - axi_clk_i to a Clock Input interface
+#     - axi_reset_i to a Reset Input interface
+#     - AXI4-Lite signals to an AXI4Lite Slave interface
+#     - User input-output signals to a Conduit interface
+# 
+# 
+# folder structure:
+# 	- script: contains all scripts for simulation
+# 	- sim: contains all simulation files generated by the simulator
+# 	- src: IP source files
+# 	- tb: test bench source files
+ls
+# README.txt
+# src
+# tb
+cd ..
+ls
+# axi4lite
+# AXI4_lite_GPIO_2020.pdf
+# AXI4_specification_IHI0022E_2013.pdf
+# designing_a_custom_axi_slave_rev1.pdf
+# IP_axi4lite_interface
+# Makefile
+# README.txt
+# transcript
+# Tutorial_Outils_signaltap.pdf
+cd axi4lite
+ls
+# hard
+# README.txt
+# soft
+cd hard
+ls
+# eda
+# README.txt
+# src
+cd src
+ls
+# DE1_SoC_top.vhd
+cd ..
+ls
+# eda
+# README.txt
+# src
+cd eda
+ls
+# DE1_SoC_assign_pins.tcl
+# DE1_SoC.qpf
+# DE1_SoC.sdc
+# DE1_SoC_top.qsf
+# qsys_system.qsys
+cd ..
+cd ..
+ls
+# hard
+# README.txt
+# soft
+cd ..
+ls
+# axi4lite
+# AXI4_lite_GPIO_2020.pdf
+# AXI4_specification_IHI0022E_2013.pdf
+# designing_a_custom_axi_slave_rev1.pdf
+# IP_axi4lite_interface
+# Makefile
+# README.txt
+# transcript
+# Tutorial_Outils_signaltap.pdf
+cd IP_axi4lite_interface
+ls
+# README.txt
+# src
+# tb
+cat README.txt
+# AXI4-lite slave interface
+# 
+# This IP is an AXI4-lite slave interface with internal registers.
+# 
+# To use the IP in Qsys, create a new component and map as follows:
+#     - axi_clk_i to a Clock Input interface
+#     - axi_reset_i to a Reset Input interface
+#     - AXI4-Lite signals to an AXI4Lite Slave interface
+#     - User input-output signals to a Conduit interface
+# 
+# 
+# folder structure:
+# 	- script: contains all scripts for simulation
+# 	- sim: contains all simulation files generated by the simulator
+# 	- src: IP source files
+# 	- tb: test bench source files
+ls
+# README.txt
+# src
+# tb
+# Load canceled
+ls
+# README.txt
+# src
+# tb
+cd src
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:24:29 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:24:29 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:24:36 on Apr 13,2020
+# vcom -reportprogress 300 -work work /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(140): (vcom-1484) Unknown formal identifier "vect_input_A_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(141): (vcom-1484) Unknown formal identifier "vect_input_B_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(142): (vcom-1484) Unknown formal identifier "vect_input_C_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(143): (vcom-1484) Unknown formal identifier "vect_input_D_i".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(145): (vcom-1484) Unknown formal identifier "output_reg_A_o".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(146): (vcom-1484) Unknown formal identifier "output_reg_B_o".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(147): (vcom-1484) Unknown formal identifier "output_reg_C_o".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(148): (vcom-1484) Unknown formal identifier "output_reg_D_o".
+# ** Error: /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/tb/axi4lite_slave_tb.vhd(304): VHDL Compiler exiting
+# End time: 14:24:36 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 1
+vsim work.axi4lite_slave
+# vsim work.axi4lite_slave 
+# Start time: 14:24:53 on Apr 13,2020
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave(rtl)#1
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+cd ..
+# Cannot change directory while a simulation is in progress.
+# Use the "quit -sim" command to unload the design first.
+quit -sim
+# End time: 14:38:18 on Apr 13,2020, Elapsed time: 0:13:25
+# Errors: 1, Warnings: 0
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+cd ..
+ls
+# README.txt
+# src
+# tb
+cd 
+ls
+# Desktop
+# Documents
+# Downloads
+# flexdock
+# mgc
+# SOCF
+cd SOCF
+ls
+# axi4lite
+# axi4lite_etu.tar.gz
+# labo01
+# labo02
+cd axi4lite/IP_axi4lite_interface
+ls
+# README.txt
+# src
+# tb
+cd src
+ls
+# axi4lite_slave.vhd
+# transcript
+# work
+rm work
+# /bin/rm: cannot remove 'work': Is a directory
+rmdir work
+# /bin/rmdir: failed to remove 'work': Directory not empty
+rm -rf work
+ls
+# axi4lite_slave.vhd
+# transcript
+cd ..
+ls
+# README.txt
+# src
+# tb
+vlib work
+ls
+# README.txt
+# src
+# tb
+# work
+vmap work work
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+ls
+# README.txt
+# src
+# tb
+# work
+ls
+# README.txt
+# run_compil_tb.tcl
+# src
+# tb
+# work
+rm -rf work
+ls
+# README.txt
+# run_compil_tb.tcl
+# src
+# tb
+
+
+
+ls
+# README.txt
+# run_compil_tb.tcl
+# src
+# tb
+./run_compil_tb.tcl
+# invalid command name "./run_compil_tb.tcl"
+do run_compil_tb.tcl
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:42:57 on Apr 13,2020
+# vcom -reportprogress 300 -work work ../src/axi4lite_slave.vhd 
+# ** Error: (vcom-7) Failed to open design unit file "../src/axi4lite_slave.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 14:42:57 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ./run_compil_tb.tcl line 9
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ../src/axi4lite_slave.vhd"
+do run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:43:22 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:43:22 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:43:22 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(140): (vcom-1484) Unknown formal identifier "vect_input_A_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(141): (vcom-1484) Unknown formal identifier "vect_input_B_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(142): (vcom-1484) Unknown formal identifier "vect_input_C_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(143): (vcom-1484) Unknown formal identifier "vect_input_D_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(145): (vcom-1484) Unknown formal identifier "output_reg_A_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(146): (vcom-1484) Unknown formal identifier "output_reg_B_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(147): (vcom-1484) Unknown formal identifier "output_reg_C_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(148): (vcom-1484) Unknown formal identifier "output_reg_D_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(304): VHDL Compiler exiting
+# End time: 14:43:22 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ./run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:46:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:46:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:46:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(151): near ")": syntax error
+# ** Error: ./tb/axi4lite_slave_tb.vhd(154): Statement cannot be labeled.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(305): VHDL Compiler exiting
+# End time: 14:46:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ./run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:47:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:47:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:47:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:47:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:47:01 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:47:28 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:47:28 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:47:28 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:47:28 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:47:28 on Apr 13,2020, Elapsed time: 0:00:27
+# Errors: 2, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:47:28 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -init
+# ** Error: (vsim-4005) Invalid argument '-init'.
+# run -init not allowed after variable initialization is complete
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./src/axi4lite_slave.vhd 245 Process line__241
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:52:02 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:52:02 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:52:02 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:52:02 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:52:03 on Apr 13,2020, Elapsed time: 0:04:35
+# Errors: 3, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:52:03 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 25 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 499900 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:52:37 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:52:37 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:52:37 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:52:37 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:52:37 on Apr 13,2020, Elapsed time: 0:00:34
+# Errors: 2, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:52:37 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:53:15 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:53:16 on Apr 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:53:16 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:53:16 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:53:16 on Apr 13,2020, Elapsed time: 0:00:39
+# Errors: 2, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:53:16 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:53:54 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:53:54 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:53:54 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:53:54 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:53:54 on Apr 13,2020, Elapsed time: 0:00:38
+# Errors: 2, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:53:54 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:54:11 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:54:11 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:54:11 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 14:54:11 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 14:54:12 on Apr 13,2020, Elapsed time: 0:00:18
+# Errors: 2, Warnings: 5
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 14:54:12 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:55:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:55:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:55:51 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(141): near "vect_input_A_i": (vcom-1576) expecting ',' or ')'.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(154): Statement cannot be labeled.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(305): VHDL Compiler exiting
+# End time: 14:55:51 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ././run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:56:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:56:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:56:01 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(141): (vcom-1484) Unknown formal identifier "vect_input_A_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(142): (vcom-1484) Unknown formal identifier "vect_input_B_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(143): (vcom-1484) Unknown formal identifier "vect_input_C_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(144): (vcom-1484) Unknown formal identifier "vect_input_D_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(305): VHDL Compiler exiting
+# End time: 14:56:01 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ././run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:56:30 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 14:56:30 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 14:56:30 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# ** Error: ./tb/axi4lite_slave_tb.vhd(141): (vcom-1484) Unknown formal identifier "vect_input_A_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(142): (vcom-1484) Unknown formal identifier "vect_input_B_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(143): (vcom-1484) Unknown formal identifier "vect_input_C_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(144): (vcom-1484) Unknown formal identifier "vect_input_D_i".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(146): (vcom-1484) Unknown formal identifier "output_reg_A_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(147): (vcom-1484) Unknown formal identifier "output_reg_B_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(148): (vcom-1484) Unknown formal identifier "output_reg_C_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(149): (vcom-1484) Unknown formal identifier "output_reg_D_o".
+# ** Error: ./tb/axi4lite_slave_tb.vhd(305): VHDL Compiler exiting
+# End time: 14:56:30 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 1
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ././run_compil_tb.tcl line 12
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./tb/axi4lite_slave_tb.vhd"
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:01:12 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# ** Error: ./src/axi4lite_slave.vhd(68): near ")": (vcom-1576) expecting IDENTIFIER.
+# End time: 15:01:12 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+# Error in macro ././run_compil_tb.tcl line 9
+# /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ./src/axi4lite_slave.vhd"
+do ./run_compil_tb.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# QuestaSim-64 vmap 10.5c_2 Lib Mapping Utility 2016.10 Oct 17 2016
+# vmap work work 
+# Modifying /opt/eda/mentor/questasim/10.5c/questasim/linux_x86_64/../modelsim.ini
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:01:21 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./src/axi4lite_slave.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity axi4lite_slave
+# -- Compiling architecture rtl of axi4lite_slave
+# End time: 15:01:21 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vcom 10.5c_2 Compiler 2016.10 Oct 17 2016
+# Start time: 15:01:21 on Apr 13,2020
+# vcom -reportprogress 300 -work work ./tb/axi4lite_slave_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading entity axi4lite_slave
+# -- Compiling entity axi4lite_slave_tb
+# -- Compiling architecture Behavioral of axi4lite_slave_tb
+# ** Warning: ./tb/axi4lite_slave_tb.vhd(67): (vcom-1236) Shared variables must be of a protected type.
+# End time: 15:01:21 on Apr 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# End time: 15:01:22 on Apr 13,2020, Elapsed time: 0:07:10
+# Errors: 32, Warnings: 8
+# vsim -novopt work.axi4lite_slave_tb 
+# Start time: 15:01:22 on Apr 13,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading std.standard
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave_tb(behavioral)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.axi4lite_slave_tb(behavioral)
+# Refreshing /home/redsuser/SOCF/axi4lite/IP_axi4lite_interface/work.axi4lite_slave(rtl)
+# Loading work.axi4lite_slave(rtl)
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rdata_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rresp_o(1 downto 0) has no driver.
+# This port will contribute value (XX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/axi_rvalid_o has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/output_reg_A_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/output_reg_B_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/output_reg_C_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /axi4lite_slave_tb/axi_instance/output_reg_D_o(31 downto 0) has no driver.
+# This port will contribute value (XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX) to the signal network.
+run -all
+# ** Note: >>Test avec table d'ecriture sur bus AXI
+#    Time: 12 ns  Iteration: 0  Instance: /axi4lite_slave_tb
+# ** Fatal: (vsim-3421) Value 50001 is out of range 0 to 50000.
+#    Time: 249950 ns  Iteration: 0  Process: /axi4lite_slave_tb/GENERATE_REFCLOCK File: ./tb/axi4lite_slave_tb.vhd
+# Fatal error in Process GENERATE_REFCLOCK at ./tb/axi4lite_slave_tb.vhd line 160
+# 
+# HDL call sequence:
+# Stopped at ./tb/axi4lite_slave_tb.vhd 160 Process GENERATE_REFCLOCK
+# 
+# Break key hit
