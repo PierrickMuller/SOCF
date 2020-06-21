@@ -1,7 +1,1 @@
-Project for the Terasic DE1-Soc board
-
-Look into the different folders for more details.
-
-folder structure:
-    - axi4lite: project that runs on the DE1-SoC board
-    - IP_axi4lite_interface: IP source files
+J'ai eu des soucis quand à la compréhension du laboratoire. Cependant, même si il manque la logique, le système est bien configuré. J'ai pas compris assez vite qu'une grande partie de la logique devait être géré coté VHDL. Bref, c'étais pas un super super test de mon coté. BOnne journée.

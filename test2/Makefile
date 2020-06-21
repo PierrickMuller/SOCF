@@ -5,4 +5,4 @@ EXCLUDE_IP_DIR={./IP_axi4lite_interface/script,./IP_axi4lite_interface/sim}
 EXCLUDE_FILES={./axi4lite/hard/eda/*.tcl~,./axi4lite/hard/eda/*.txt,./axi4lite/hard/eda/*.csv,./axi4lite/hard/eda/*.qws,./axi4lite/hard/eda/*.sopcinfo,./axi4lite/soft/proj/*.axf,./axi4lite/soft/proj/*.objdump,./axi4lite/soft/proj/*.srec}
 
 zip:
-	tar --exclude=$(EXCLUDE_DIR) --exclude=$(EXCLUDE_IP_DIR) --exclude=$(EXCLUDE_FILES) -zcf ../axi4lite.tar.gz .
+	tar --exclude=$(EXCLUDE_DIR) --exclude=$(EXCLUDE_IP_DIR) --exclude=$(EXCLUDE_FILES) -zcf ../test2.tar.gz .

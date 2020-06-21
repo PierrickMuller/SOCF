@@ -1,0 +1,1 @@
+cmd_/home/pierrick/Documents/socf/SOCF/labo08/driver/built-in.a := rm -f /home/pierrick/Documents/socf/SOCF/labo08/driver/built-in.a; arm-linux-gnueabihf-ar cDPrST /home/pierrick/Documents/socf/SOCF/labo08/driver/built-in.a 

@@ -1,0 +1,1 @@
+cmd_/home/pierrick/Documents/socf/SOCF/labo08/driver/md5.ko := arm-linux-gnueabihf-ld -r  -EL  --build-id  -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds -o /home/pierrick/Documents/socf/SOCF/labo08/driver/md5.ko /home/pierrick/Documents/socf/SOCF/labo08/driver/md5.o /home/pierrick/Documents/socf/SOCF/labo08/driver/md5.mod.o;  true
