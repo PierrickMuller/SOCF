@@ -16,6 +16,7 @@
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;
+    use ieee.std_logic_unsigned.all;
 
 entity axi4lite_slave is
     generic (
@@ -53,28 +54,7 @@ entity axi4lite_slave is
         axi_rready_i    : in  std_logic
         
         -- User input-output
-        
-        --TEST POUR TESTBENCH 
---           vect_input_A_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
---           vect_input_B_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
---           vect_input_C_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
---           vect_input_D_i  : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
---         
---           output_reg_A_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
---           output_reg_B_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
---           output_reg_C_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0); 
---           output_reg_D_o  : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0) 
-
-         
-  --      switch_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-   --     keys_i      : in std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-          
-   --     leds_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    --    hex03_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-    --    hex54_o      : out std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
-        -- Interruptions 
-        
-   --     irq_o   : out std_logic
+    
         
     );
 end entity axi4lite_slave;
@@ -113,7 +93,12 @@ architecture rtl of axi4lite_slave is
     signal en_s                : std_logic;
     signal valid_i_s           : std_logic;
     signal valid_o_s           : std_logic;
-    
+    signal valid_footprint_s    : std_logic;
+    signal footprint1_s        : std_logic_vector(31 downto 0);
+    signal footprint2_s        : std_logic_vector(31 downto 0);
+    signal footprint3_s        : std_logic_vector(31 downto 0);
+    signal footprint4_s        : std_logic_vector(31 downto 0);   
+   
      -- signal representing registers 
     signal const_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
     signal test_register_s      : std_logic_vector(AXI_DATA_WIDTH-1 downto 0);
@@ -128,14 +113,6 @@ architecture rtl of axi4lite_slave is
     signal temp_Vect_Strb_3_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
     signal temp_Vect_Strb_4_s : std_logic_vector(AXI_DATA_WIDTH/4 -1 downto 0);
    
-    -- signal d'interruption
-    -- signal irq_s   : std_logic;
-
-    -- signaux de masquage pour la lecture des registres
-    --signal KEY_MASK_s    : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
-    --signal SWITCH_LEDS_MASK_s : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
-    --signal HEX54_MASK_s  : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
-    --signal HEX03_MASK_s  : std_logic_vector(AXI_DATA_WIDTH - 1 downto 0);
     
     -- component declaration
     component Md5Core is
@@ -233,8 +210,8 @@ begin
         variable int_waddr_v : natural;
     begin
         if reset_s = '1' then
-            --Assignation des valeurs de base aux registres et au signal d'interruption lors du reset
-            test_register_s <= (others => '0');--vect_input_A_i;
+            --Assignation des valeurs de base aux registres 
+            test_register_s <= (others => '0');
             const_register_s <= x"DEADBEEF";
             md5_work_done_s <= (others => '0');
             data_md5_s <= (others => '0');
@@ -244,23 +221,11 @@ begin
             init_val_s <= x"67452301EFCDAB8998BADCFE10325476";
             en_s <= '0';
             valid_i_s <= '0';
-            
-             -- création des masques 
-            --KEY_MASK_s <= (others => '0');
-            --SWITCH_LEDS_MASK_s <= (others => '0');
-            --HEX03_MASK_s <= (others => '1');
-            --HEX54_MASK_s <= (others => '1');
-            
-            --KEY_MASK_s(3 downto 0) <= (others => '1');
-            --SWITCH_LEDS_MASK_s(9 downto 0) <= (others => '1');
-            --HEX03_MASK_s(31) <= '0';
-            --HEX03_MASK_s(23) <= '0';
-            --HEX03_MASK_s(15) <= '0';
-            --HEX03_MASK_s(7)  <= '0';
-            --HEX54_MASK_s(31 downto 15) <= (others => '0');
-            --HEX54_MASK_s(7)  <= '0';    
+             
         elsif rising_edge(axi_clk_i) then
             
+            -- Dans tous les cas, remise à 0 de valid_i en entrée
+            valid_i_s <= '0';
             -- Si on peut écrire
             if axi_data_wren_s = '0' then
             
@@ -268,37 +233,49 @@ begin
                 case int_waddr_v is
                     when 0   => null; -- constante, on écrit pas dedans
                     when 1   => test_register_s <= axi_wdata_s; -- Test register 
-                    when 2   => data_md5_s <= axi_wdata_s; wb_s <= wb_s(479 downto 0) & data_md5_s; 
-                    when 3   => start_md5_work_s <= axi_wdata_s; -- A MODIFIER AVEC MASQUE 
-                                if to_integer(unsigned(start_md5_work_s)) = 0 then 
+                    when 2   => data_md5_s <= axi_wdata_s; wb_s <= wb_s(479 downto 0) & axi_wdata_s; -- On stocke la valeur reçu dans le registre et on décalle le block pour accueillir la valeur.
+                    when 3   => start_md5_work_s <= axi_wdata_s; -- Gestion du start du travail sur un fichier. En remettant à 0, on effectue un reset.
+                                if axi_wdata_s(0) = '0' then 
                                     init_val_s <= x"67452301EFCDAB8998BADCFE10325476";
                                     en_s <= '0';
                                     valid_i_s <= '0';
+                                    wb_s <= (others => '0');
                                 end if;
-                    when 4   => md5_work_done_s <= axi_wdata_s;
-                    when 5   => start_md5_block_s <= axi_wdata_s; -- A MODIFIER AVEC MASQUE
-                                if to_integer(unsigned(start_md5_block_s)) = 1 then 
+                    when 4   => md5_work_done_s <= axi_wdata_s; -- Permet de remettre à 0 
+                    when 5   => start_md5_block_s <= axi_wdata_s; -- Quand on start un bloq, on met l'enable et le valid à 1 pour le bloc md5
+                                if axi_wdata_s(0) = '1' then 
                                     en_s <= '1';
                                     valid_i_s <= '1';
                                 end if;
+                                
                     when others => null;  --on écrit pas dedans
                 end case;
             end if;
-            if valid_o_s = '1' then
-                en_s <= '0';
+            if valid_footprint_s = '1' then     -- Permet d'avoir le valid généré pour la gestion du footprint (Voir bloc read) actif un coups de clock
+                valid_footprint_s <= '0';
+            end if;
+            if valid_o_s = '1' then -- Quand un hash à été généré
+                
+                -- Remise à 0 du valid et on monte le flage "md5_work_done" à 1.
                 valid_i_s <= '0';
                 md5_work_done_s <= x"00000001";
+                
                 --if to_integer(unsigned(start_md5_work_s)) = 1 then 
                 --init_val_s <= footprint_s;
-                init_val_s <= std_logic_vector(unsigned(init_val_s(127 downto 96)) + unsigned(footprint_s(127 downto 96))) & 
-                              std_logic_vector(unsigned(init_val_s(95 downto 64)) + unsigned(footprint_s(95 downto 64))) &
-                              std_logic_vector(unsigned(init_val_s(63 downto 32)) + unsigned(footprint_s(63 downto 32))) &
-                              std_logic_vector(unsigned(init_val_s(31 downto 0)) + unsigned(footprint_s(31 downto 0)));
-                --end if;
-                data_md5_s <= init_val_s(127 downto 96);
-                --footprint_s <= init_val_s(95 downto 0) & x"00000000";
+
+                -- Gestion du footprint avec addition et gestion de la nouvelle valeur de l'init
+                footprint1_s <= init_val_s(127 downto 96) + footprint_s(127 downto 96); 
+                footprint2_s <= init_val_s(95 downto 64) + footprint_s(95 downto 64);
+                footprint3_s <= init_val_s(63 downto 32) + footprint_s(63 downto 32);
+                footprint4_s <= init_val_s(31 downto 0) + footprint_s(31 downto 0);
+                
+                init_val_s  <= footprint1_s & footprint2_s & footprint3_s & footprint4_s;
+                
+                -- Permet la récupération du bon footprint
+                valid_footprint_s <= '1';
 
             end if;
+            
         end if;
     end process;
     
@@ -373,22 +350,20 @@ begin
                 case int_raddr_v is
                     when 0   => axi_rdata_s <= const_register_s; -- constante, on écrit pas dedans
                     when 1   => axi_rdata_s <= test_register_s; -- Test register 
-                    when 2   => axi_rdata_s <= footprint_temp_s(127 downto 96);--data_md5_s;
-                                footprint_temp_s <= init_val_s(95 downto 0) & x"00000000";
-                                --data_md5_s <= footprint_s(127 downto 96);
-                                --footprint_s <= footprint_s(95 downto 0) & x"00000000";
+                    when 2   => axi_rdata_s <= footprint_temp_s(127 downto 96); -- Gestion du footprint pour la récupération par lecture
+                                footprint_temp_s <= footprint_temp_s(95 downto 0) & x"00000000";
+                    when 3   => axi_rdata_s <= start_md5_work_s;
                     when 4   => axi_rdata_s <= md5_work_done_s;
-                                --if to_integer(unsigned(md5_work_done_s)) = 1 then 
-                                --    md5_work_done_s <= (others => '0');
-                                --end if;
+                    when 5   => axi_rdata_s <= start_md5_block_s;
                     when others => null;    -- Dans les autres cas, on ne fait rien
                 end case;
             else
                 axi_rvalid_s <= '0';
             end if;
-            if valid_o_s = '1' then
-                footprint_temp_s <= footprint_s;
+            if valid_footprint_s = '1' then -- Permet de récupérer le footprint souhaité 
+                footprint_temp_s <= init_val_s;
             end if ;
+            
         end if;
     end process;
     
